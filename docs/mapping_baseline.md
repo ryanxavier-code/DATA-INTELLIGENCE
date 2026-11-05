@@ -35,9 +35,9 @@ O resultado varia por sistema fictício. No conjunto inicial, Top-1 varia de 8,3
 - O conjunto cobre somente oito campos canônicos iniciais. Campos adicionais exigem novos exemplos e validação das regras de negócio.
 - A linha de base não foi ajustada para maximizar essas métricas. Isso evita confundir a inclusão dos próprios exemplos como aliases com generalização para um sistema novo.
 
-## Critérios antes de integração ou substituição
+## Uso atual do classificador
 
-O primeiro classificador já foi comparado com a heurística usando sistemas inteiros fora do treino. Mesmo que supere a heurística nestes exemplos, isso não basta para integrar recomendações à CLI nem para substituir uma automação: será necessária mais variedade sintética, revisão dos erros e avaliação separada das regras e resultados em entradas exclusivamente sintéticas.
+O classificador está integrado ao app como recomendador revisável para cabeçalhos que não foram reconhecidos por aliases exatos. Ele não substitui as regras determinísticas, não decide transformações comerciais e não é integrado à CLI. As sugestões abaixo do corte calculado a partir dos dados de treino são omitidas. Como os dados são sintéticos, esse corte não garante o mesmo comportamento em sistemas reais.
 
 ## Linha de base ampliada para os exemplos sintéticos de cabeçalho
 
@@ -50,3 +50,11 @@ python examples/evaluate_mapping_baseline.py --dataset data/synthetic/farmacia_d
 Esta medição tem 18 campos canônicos e uma composição diferente da linha de base inicial; não é uma comparação direta com os 120 exemplos. Sistemas fictícios inteiros são mantidos fora do treino por dobra, sem misturar exemplos do mesmo sistema entre treino e validação.
 
 O classificador de cabeçalhos atingiu Top-1 **76,4%**, Top-3 **95,3%** e macro-F1 **0,770** na mesma base ampliada. A queda em relação ao primeiro experimento de nove classes é esperada porque agora também precisa distinguir campos semelhantes dos modelos, como `grupo`/`subgrupo` e valor bruto/líquido. A avaliação dos cabeçalhos do workbook `TESTEML` foi 20/24 em Top-1 e 23/24 em Top-3. Esses números são sintéticos e não comprovam desempenho fora do material gerado.
+
+O script `examples/evaluate_selective_header_model.py` mede o comportamento quando o modelo pode se abster. Em cada dobra externa, escolhe-se o corte usando apenas subdivisões do treino e mede-se o resultado nos perfis externos reservados. Nesse protocolo, 82 das 318 sugestões foram aceitas (cobertura de **25,8%**) e 78 estavam corretas (**95,1% de precisão seletiva**). Essa precisão não equivale a 100%: 4 das 82 sugestões aceitas estavam erradas, e 236 foram omitidas. Reproduza com:
+
+```powershell
+python examples/evaluate_selective_header_model.py
+```
+
+Todos os resultados são de cabeçalhos artificiais, com distribuição pequena e controlada. Não há medição em sistemas empresariais reais; por isso não se deve apresentar o número como garantia de eficácia no trabalho.

@@ -25,11 +25,13 @@ from data_intelligence.canonical import write_excel_template
 from data_intelligence.dataset import Dataset
 from data_intelligence.canonical.mapping import apply_column_mapping
 from data_intelligence.ingestion import read_csv, read_excel
+from data_intelligence.ml import predict_header_candidates, train_header_classifier
 from data_intelligence.transforms import prepare_dataset
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEMO_DIR = PROJECT_ROOT / "data" / "synthetic" / "farmacia_demo"
+ML_TRAINING_DATA = DEMO_DIR / "column_mappings_header_ml_demo.csv"
 DEFAULT_TEMPLATE_DIR = Path.home() / "Desktop" / "Banco de Dados" / "Modelos principais"
 TEMPLATE_DIR = Path(os.environ.get("DATA_INTELLIGENCE_TEMPLATE_DIR", DEFAULT_TEMPLATE_DIR))
 
@@ -84,7 +86,7 @@ FIELD_ALIASES = {
     "grupo": ("GRUPO", "Categoria", "Família"),
     "subgrupo": ("SUBGRUPO", "Departamento", "Subgrupo"),
     "laboratorio": ("LABORATORIO", "Laboratório", "Fabricante"),
-    "quantidade": ("QUANTIDADE", "Estoque", "Saldo disponível", "Saldo físico", "Unidades comercializadas", "Qtd. vendida", "Volume vendido"),
+    "quantidade": ("QUANTIDADE", "Estoque", "Saldo disponível", "Saldo físico", "Unidades comercializadas", "Quantidade vendida", "Qtd. vendida", "Volume vendido"),
     "valor_total_bruto": ("VALOR_TOTAL_BRUTO", "Total antes de descontos", "Valor original das vendas"),
     "valor_total_liquido": ("VALOR_TOTAL_LIQUIDO", "Venda", "Valor vendido", "Total líquido"),
     "valor_total_custo": ("VALOR_TOTAL_CUSTO", "Custo", "Montante em custo"),
@@ -108,11 +110,20 @@ def _resolve_template(report_type: str) -> Path:
     return Path(config["demo_template"])
 
 
-def _suggest_field_mapping(columns: list[str], report_type: str) -> dict[str, str]:
-    """Sugere pares origem/campo usando aliases determinísticos revisáveis."""
+@st.cache_resource(show_spinner="Carregando classificador de cabeçalhos...")
+def _load_header_classifier():
+    """Treina uma vez por sessão com o corpus sintético incluído no projeto."""
+    return train_header_classifier(ML_TRAINING_DATA)
+
+
+def _suggest_field_mapping(
+    columns: list[str], report_type: str
+) -> dict[str, dict[str, object]]:
+    """Combina aliases exatos com sugestões ML revisáveis para o restante."""
     config = REPORT_CONFIGS[report_type]
     used_sources: set[str] = set()
-    mapping: dict[str, str] = {}
+    used_fields: set[str] = set()
+    mapping: dict[str, dict[str, object]] = {}
     for canonical_field in config["fields"]:
         aliases = (FIELD_LABELS[canonical_field], *FIELD_ALIASES.get(canonical_field, ()))
         candidate = next(
@@ -125,8 +136,50 @@ def _suggest_field_mapping(columns: list[str], report_type: str) -> dict[str, st
             None,
         )
         if candidate is not None:
-            mapping[candidate] = canonical_field
+            mapping[candidate] = {
+                "field": canonical_field,
+                "method": "alias exato",
+                "score": 1.0,
+            }
             used_sources.add(candidate)
+            used_fields.add(canonical_field)
+
+    # CNPJ e unidade dependem de contexto/cadastro e não devem ser inferidos
+    # pelo texto de uma coluna de produto.
+    ml_fields = set(config["fields"]) - used_fields - {"cnpj", "unidade"}
+    if not ml_fields:
+        return mapping
+
+    trained_model = _load_header_classifier()
+    ranked: list[tuple[float, str, str]] = []
+    for source_column in columns:
+        if source_column in used_sources:
+            continue
+        candidates = predict_header_candidates(
+            trained_model.estimator,
+            report_type=report_type,
+            source_column=source_column,
+            allowed_fields=ml_fields,
+            top_n=len(ml_fields),
+        )
+        ranked.extend(
+            (candidate.score, source_column, candidate.canonical_field)
+            for candidate in candidates
+            if candidate.score >= trained_model.minimum_score
+        )
+
+    # Escolhe pares sem repetir coluna de origem nem campo de destino.
+    ranked.sort(key=lambda item: (-item[0], item[1], item[2]))
+    for score, source_column, canonical_field in ranked:
+        if source_column in used_sources or canonical_field in used_fields:
+            continue
+        mapping[source_column] = {
+            "field": canonical_field,
+            "method": "ML (score não calibrado)",
+            "score": score,
+        }
+        used_sources.add(source_column)
+        used_fields.add(canonical_field)
     return mapping
 
 
@@ -522,16 +575,46 @@ def main() -> None:
                             )
                         suggested_mapping = _suggest_field_mapping(columns, selected)
                         suggested_by_field = {
-                            canonical: source
-                            for source, canonical in suggested_mapping.items()
+                            str(suggestion["field"]): (source, suggestion)
+                            for source, suggestion in suggested_mapping.items()
                         }
+                        alias_suggestions = sum(
+                            suggestion["method"] == "alias exato"
+                            for suggestion in suggested_mapping.values()
+                        )
+                        ml_suggestions = len(suggested_mapping) - alias_suggestions
+                        st.caption(
+                            f"Pré-preenchimento: {alias_suggestions} correspondência(s) por alias e "
+                            f"{ml_suggestions} sugestão(ões) de ML."
+                        )
+                        st.info(
+                            "O classificador foi treinado com exemplos sintéticos e considera somente "
+                            "o tipo do relatório e o texto do cabeçalho. Scores de ML não são "
+                            "probabilidades calibradas. Sugestões abaixo do corte experimental de "
+                            f"{_load_header_classifier().minimum_score:.3f} ficam sem pré-preenchimento; "
+                            "revise as demais."
+                        )
                         selections: dict[str, str | None] = {}
                         field_columns = st.columns(2)
                         for field_index, canonical_field in enumerate(config["fields"]):
                             label = FIELD_LABELS[canonical_field]
-                            current_source = suggested_by_field.get(canonical_field)
+                            suggestion = suggested_by_field.get(canonical_field)
+                            current_source = suggestion[0] if suggestion else None
                             choices: list[str | None] = [None, *columns]
                             current_index = choices.index(current_source) if current_source in choices else 0
+                            if suggestion:
+                                suggestion_details = suggestion[1]
+                                if suggestion_details["method"] == "alias exato":
+                                    suggestion_help = (
+                                        f"Sugestão por alias exato: {current_source}. Confirme que o campo corresponde."
+                                    )
+                                else:
+                                    suggestion_help = (
+                                        f"Sugestão de ML: {current_source} · score bruto "
+                                        f"{float(suggestion_details['score']):.3f} (não calibrado). Revise."
+                                    )
+                            else:
+                                suggestion_help = "Nenhuma sugestão automática segura foi encontrada."
                             selections[canonical_field] = field_columns[field_index % 2].selectbox(
                                 label,
                                 choices,
@@ -539,10 +622,10 @@ def main() -> None:
                                 format_func=lambda value: "— deixar vazio —" if value is None else value,
                                 key=f"field_{index}_{selected}_{canonical_field}",
                                 help=(
-                                    "Obrigatório para cada linha."
+                                    "Obrigatório para cada linha. "
                                     if canonical_field in REQUIRED_FIELDS
-                                    else "Opcional. Se não mapear uma coluna, este campo ficará vazio."
-                                ),
+                                    else "Opcional. Se não mapear uma coluna, este campo ficará vazio. "
+                                ) + suggestion_help,
                             )
 
                         used_sources = [source for source in selections.values() if source]

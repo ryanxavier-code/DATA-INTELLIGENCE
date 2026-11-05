@@ -14,43 +14,16 @@ import json
 from pathlib import Path
 
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import GroupKFold
-from sklearn.pipeline import Pipeline
+
+from data_intelligence.ml import build_header_classifier
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = PROJECT_ROOT / "data" / "synthetic" / "farmacia_demo"
 INPUT_PATH = DATA_DIR / "column_mappings_header_ml_demo.csv"
 OUTPUT_PATH = DATA_DIR / "header_ml_oof_predictions_demo.csv"
-
-
-def build_pipeline() -> Pipeline:
-    """Cria os passos de texto e classificação que serão ajustados por dobra."""
-    return Pipeline(
-        steps=[
-            (
-                "tfidf",
-                TfidfVectorizer(
-                    analyzer="char_wb",
-                    ngram_range=(2, 5),
-                    lowercase=True,
-                    strip_accents="unicode",
-                    sublinear_tf=True,
-                ),
-            ),
-            (
-                "classifier",
-                LogisticRegression(
-                    class_weight="balanced",
-                    max_iter=2000,
-                    random_state=42,
-                ),
-            ),
-        ]
-    )
 
 
 def main() -> None:
@@ -94,7 +67,7 @@ def main() -> None:
                 f"{sorted(repeated_inputs)}"
             )
 
-        model = build_pipeline()
+        model = build_header_classifier()
         model.fit(
             [model_input[index] for index in train_indices],
             expected[train_indices],

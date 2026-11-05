@@ -2,7 +2,7 @@
 
 > Ferramenta em Python para inspecionar arquivos tabulares, entender sua qualidade e preparar uma representação consistente dos dados.
 
-> **Status:** MVP aplicado, em piloto local. A ferramenta já é usada no trabalho para preparar relatórios tabulares, com revisão dos mapeamentos e exportação para modelos Excel. O repositório público contém apenas exemplos sintéticos; arquivos, cadastros e dados empresariais ficam fora dele. O ML é experimental e ainda não participa do tratamento feito pelo app.
+> **Status:** MVP aplicado, em piloto local. A ferramenta já é usada no trabalho para preparar relatórios tabulares, com revisão dos mapeamentos e exportação para modelos Excel. O repositório público contém apenas exemplos sintéticos; arquivos, cadastros e dados empresariais ficam fora dele. O classificador experimental agora participa do app como recomendador revisável de cabeçalhos; ele não escolhe regras comerciais nem trata fontes de forma autônoma.
 
 ## Índice
 
@@ -44,7 +44,7 @@ Esta versão contém uma biblioteca Python reutilizável, uma interface de linha
 - No app, enviar relatórios de estoque/vendas, confirmar o tipo, revisar sugestões de mapeamento, conferir uma prévia e baixar uma cópia de um modelo Excel.
 - Usar funções reutilizáveis para limpeza explícita, busca por chave (lookup) e agregação tabular em exemplos.
 
-O app pode sugerir associações por nomes conhecidos, mas ainda exibe os campos para revisão. Quando o cabeçalho não é reconhecido, quando não existe cabeçalho ou quando a regra depende de lógica comercial, a ferramenta não tem conhecimento suficiente para decidir sozinha. EAN e descrição precisam estar preenchidos para que uma linha seja exportada; campos sem mapeamento ficam vazios.
+O app combina correspondências exatas de aliases com sugestões do classificador para cabeçalhos menos familiares e exibe os campos para revisão. O ML considera o tipo do relatório e o texto do cabeçalho; não examina valores das células. Quando não existe cabeçalho ou quando a regra depende de lógica comercial, a ferramenta ainda não consegue decidir sozinha. EAN e descrição precisam estar preenchidos para que uma linha seja exportada; campos sem mapeamento ficam vazios.
 
 ### Tecnologias e ferramentas
 
@@ -55,7 +55,7 @@ O app pode sugerir associações por nomes conhecidos, mas ainda exibe os campos
 | openpyxl | Arquivos `.xlsx` e modelos Excel | Lê e grava planilhas, preservando a estrutura e estilos básicos do modelo de saída. |
 | xlrd | Arquivos antigos `.xls` | Permite a leitura do formato legado do Excel. |
 | Streamlit | `app/streamlit_app.py` | Cria o app local no navegador, sem exigir um front-end separado em JavaScript. |
-| scikit-learn | Experimento de ML em `examples/` | Treina e avalia um classificador experimental de nomes de colunas; é opcional e não participa do app atual. |
+| scikit-learn | `src/data_intelligence/ml/` e app | Treina e executa o classificador experimental que recomenda campos para cabeçalhos; não aplica regras de negócio. |
 | pytest | `tests/` | Executa os testes automatizados do projeto; é dependência opcional de desenvolvimento. |
 | VS Code | Desenvolvimento | Editor usado para ler e alterar os arquivos do projeto. |
 | PowerShell | Exemplos de comandos no Windows | Terminal para instalar dependências, executar a CLI e iniciar o app. |
@@ -63,7 +63,7 @@ O app pode sugerir associações por nomes conhecidos, mas ainda exibe os campos
 | GitHub | Repositório remoto | Hospeda o código e a documentação do portfólio. Não executa o processamento local das planilhas. |
 | `abrir_data_intelligence.bat` | Raiz do projeto | Atalho para iniciar o app no Windows; usa o Python do `.venv` quando ele existe. |
 
-As bibliotecas e suas dependências opcionais estão declaradas em [`pyproject.toml`](pyproject.toml). A instalação escolhida determina quais recursos ficam disponíveis: `excel` adiciona suporte a Excel, `app` instala Streamlit, `ml` instala scikit-learn e `dev` instala pytest.
+As bibliotecas e suas dependências opcionais estão declaradas em [`pyproject.toml`](pyproject.toml). A opção `excel` adiciona suporte a Excel; `app` instala Streamlit e scikit-learn para disponibilizar as sugestões ML na interface; `ml` instala scikit-learn para os experimentos; `dev` instala pytest.
 
 ## Competências técnicas evidenciadas
 
@@ -75,7 +75,7 @@ Este projeto demonstra prática na construção de uma ferramenta de dados em Py
 | Engenharia de dados | Ingestão de CSV/Excel, limpeza explícita, padronização de esquemas, lookup por chave, agregação e exportação para modelos Excel. | [`ingestion/`](src/data_intelligence/ingestion/), [`transforms/`](src/data_intelligence/transforms/) e [`canonical/`](src/data_intelligence/canonical/) |
 | Qualidade e perfilamento | Métricas de ausências, valores distintos e repetidos, tipos aparentes e verificações configuráveis. | [`profiling/`](src/data_intelligence/profiling/) e [`quality/`](src/data_intelligence/quality/) |
 | Fundamentos de engenharia de ML | Preparação de exemplos sintéticos rotulados, comparação com uma linha de base e avaliação separando perfis de sistemas entre treino e validação. | [`examples/generate_synthetic_ml_dataset.py`](examples/generate_synthetic_ml_dataset.py), [`examples/evaluate_mapping_baseline.py`](examples/evaluate_mapping_baseline.py) e [`docs/mapping_baseline.md`](docs/mapping_baseline.md) |
-| ML com scikit-learn | Pipeline de TF-IDF de caracteres e regressão logística para classificar cabeçalhos; métricas Top-1, Top-3 e macro-F1. | [`examples/evaluate_header_ml_model.py`](examples/evaluate_header_ml_model.py) |
+| ML com scikit-learn | Pipeline de TF-IDF de caracteres e regressão logística para sugerir campos; avaliação Top-1, Top-3 e macro-F1 separada por sistemas sintéticos. | [`src/data_intelligence/ml/`](src/data_intelligence/ml/) e [`examples/evaluate_header_ml_model.py`](examples/evaluate_header_ml_model.py) |
 | Interface de aplicação | Fluxo Streamlit para enviar arquivos, identificar relatório, revisar mapeamentos, visualizar prévia e baixar resultado. | [`app/streamlit_app.py`](app/streamlit_app.py) |
 | Qualidade de software | Testes unitários para ingestão, perfilamento, esquema, motor e CLI, além de exemplos sintéticos com gabaritos verificáveis. | [`tests/unit/`](tests/unit/) e [`data/synthetic/`](data/synthetic/) |
 | Documentação e versionamento | Guias de instalação e uso, documentação do problema de ML e arquitetura organizada em Git. | [`README.md`](README.md), [`docs/`](docs/) e histórico Git |
@@ -84,7 +84,7 @@ Este projeto demonstra prática na construção de uma ferramenta de dados em Py
 
 > MVP aplicado em Python para análise e padronização de dados tabulares, usado como piloto local no tratamento de relatórios de trabalho. Combina biblioteca modular, CLI e interface Streamlit, com ingestão de CSV/Excel, perfilamento, verificações de qualidade, mapeamento revisável, transformações reutilizáveis e exportação para modelos Excel. Também inclui um experimento de classificação de cabeçalhos com scikit-learn avaliado somente em dados sintéticos.
 
-**Como apresentar o nível:** não é apenas um exercício acadêmico: é um MVP aplicado que já apoia um fluxo real, ainda com revisão humana e regras conhecidas. A generalização para diferentes sistemas e a automação autônoma continuam em desenvolvimento. O classificador de ML é experimental, não está integrado ao app e não escolhe as regras de tratamento.
+**Como apresentar o nível:** não é apenas um exercício acadêmico: é um MVP aplicado que já apoia um fluxo real, ainda com revisão humana e regras conhecidas. O classificador ML está integrado como recomendador de cabeçalhos, mas sua avaliação é sintética e ele não escolhe as regras de tratamento. A generalização para sistemas reais e a automação autônoma continuam em desenvolvimento.
 
 ## Produto pretendido
 
@@ -127,7 +127,7 @@ Ao evoluir o projeto, serão praticados conceitos usados em sistemas de dados e 
 ### App local
 
 - Identifica o tipo de relatório usando o nome do arquivo e sinais nos cabeçalhos, com confirmação da pessoa usuária.
-- Pré-preenche sugestões de campos quando encontra aliases conhecidos; a tela permite revisar ou corrigir cada associação.
+- Pré-preenche sugestões por aliases exatos e pelo classificador ML; a tela identifica a origem da sugestão e permite revisar ou corrigir cada associação.
 - Remove linhas sem EAN ou descrição, processa os campos mapeados e deixa os demais vazios.
 - Mostra uma prévia e permite baixar uma cópia do modelo de estoque ou vendas.
 - Lê apenas as colunas selecionadas para reduzir trabalho em arquivos maiores; não calcula o perfil estatístico completo da CLI.
@@ -136,19 +136,19 @@ O app e a CLI usam funções do pacote, mas têm fluxos distintos: a CLI chama o
 
 ## O que ainda não faz
 
-Esta versão não identifica unidades reais automaticamente nem lê um cadastro empresarial de lojas pelo app. Não descobre ou executa scripts de tratamento privados, não infere o significado de colunas sem cabeçalho e não aplica fórmulas comerciais por conta própria. As funções de lookup e agregação existem como componentes reutilizáveis e exemplos, mas ainda não estão conectadas ao fluxo da interface. O classificador experimental não está integrado ao app. Também não há integração com banco de dados ou nuvem, deduplicação aproximada nem atualização de objetos nativos de tabela dinâmica do Excel. A origem não é sobrescrita. Consulte [`docs/initial_connector_scope.md`](docs/initial_connector_scope.md) para o escopo planejado.
+Esta versão não identifica unidades reais automaticamente nem lê um cadastro empresarial de lojas pelo app. Não descobre ou executa scripts de tratamento privados, não infere o significado de colunas sem cabeçalho e não aplica fórmulas comerciais por conta própria. As funções de lookup e agregação existem como componentes reutilizáveis e exemplos, mas ainda não estão conectadas ao fluxo da interface. O classificador sugere cabeçalhos conhecidos a partir do texto; não examina os valores das colunas, não aprende com as correções durante o uso e não escolhe transformações. Também não há integração com banco de dados ou nuvem, deduplicação aproximada nem atualização de objetos nativos de tabela dinâmica do Excel. A origem não é sobrescrita. Consulte [`docs/initial_connector_scope.md`](docs/initial_connector_scope.md) para o escopo planejado.
 
 ## Machine learning neste projeto
 
-O ML é uma etapa de estudo e pesquisa, ainda separada do processamento usado pelo app:
+O ML já está conectado à etapa de identificação do app como recomendador revisável; as operações de tratamento continuam determinísticas e separadas:
 
 1. **Problema:** sugerir o campo canônico de uma coluna, como `ean`, `quantidade` ou `valor_total_liquido`.
 2. **Dados:** exemplos artificiais com nomes de cabeçalhos e rótulos conhecidos; nenhum relatório real da empresa é usado no conjunto versionado.
 3. **Modelo experimental:** `TfidfVectorizer` transforma pedaços de caracteres dos cabeçalhos em números; `LogisticRegression` aprende a associar esses padrões aos campos rotulados.
 4. **Avaliação:** validação separada por perfis/sistemas sintéticos, para testar se o classificador generaliza para perfis que não viu durante o treino.
-5. **Limite atual:** os scripts treinam e avaliam o modelo durante o experimento, mas não salvam um modelo de produção, não aprendem com o uso e não escolhem transformações de negócio. A saída do classificador não é uma garantia de acerto.
+5. **Limite atual:** o app treina o pipeline em memória com exemplos sintéticos e o mantém em cache durante a sessão; não salva um modelo de produção, não aprende com as correções de uso, não interpreta colunas sem cabeçalho e não escolhe transformações de negócio. O score não é uma probabilidade calibrada nem garantia de acerto.
 
-Para executar o experimento, instale a opção `ml` e siga os comandos da seção [Dados de demonstração](#dados-de-demonstração). Os resultados medidos são referências do conjunto sintético, não uma promessa de desempenho em arquivos reais.
+Para executar o app com as sugestões de ML, instale `.[excel,app]`. Para reproduzir a avaliação, instale `.[excel,ml]` e siga os comandos da seção [Dados de demonstração](#dados-de-demonstração). Os resultados medidos são referências do conjunto sintético, não uma promessa de desempenho em arquivos reais.
 
 ## Como a execução funciona
 
@@ -195,6 +195,7 @@ O comando **não executa os scripts de `examples/` em sequência**. A CLI chama 
 │       │   └── excel_export.py # grava dados canônicos em uma cópia de modelo Excel
 │       ├── ingestion/          # leitura de CSV e Excel
 │       ├── identity/           # resolução de unidade/CNPJ por cadastro local
+│       ├── ml/                 # classificador experimental de cabeçalhos
 │       ├── profiling/          # perfilamento descritivo e características por coluna
 │       ├── quality/            # verificações explícitas de qualidade
 │       ├── schema/             # sugestões de equivalência de colunas
@@ -227,6 +228,7 @@ O comando **não executa os scripts de `examples/` em sequência**. A CLI chama 
 | `ingestion/csv.py` | Lê CSV e transforma erros de leitura em `IngestionError`. |
 | `ingestion/excel.py` | Lê uma planilha/aba de Excel e transforma erros em `IngestionError`. |
 | `identity/store_lookup.py` | Busca unidade e CNPJ por nome exato normalizado em um cadastro Excel local. |
+| `ml/header_classifier.py` | Treina o pipeline TF-IDF + regressão logística e retorna candidatos de campo para o app. |
 | `profiling/profiler.py` | Calcula métricas descritivas por coluna e para o conjunto. |
 | `profiling/column_features.py` | Calcula atributos numéricos de uma coluna e seu contexto tabular; não escolhe o rótulo canônico. |
 | `quality/checks.py` | Verifica valores obrigatórios, unicidade configurada e linhas idênticas. |
@@ -289,7 +291,7 @@ Com o ambiente virtual ativado e a opção `app` instalada, execute na raiz do p
 streamlit run app/streamlit_app.py
 ```
 
-O Streamlit abre a interface no navegador, servida localmente pelo seu computador. Para testar, use as entradas fictícias em `data/synthetic/farmacia_demo/`. O fluxo guiado apresenta quatro passos: envio, confirmação do tipo de relatório e mapeamentos, revisão da prévia e download. O app usa `estoque.xlsx` e `vendas.xlsx` da pasta `Desktop/Banco de Dados/Modelos principais` para gerar a saída quando os arquivos existem; também é possível configurar outra pasta pela variável `DATA_INTELLIGENCE_TEMPLATE_DIR`. Os modelos empresariais ficam fora do repositório. Sem os modelos exatos, o app bloqueia a exportação em vez de gerar uma planilha com campos diferentes. EAN e descrição do produto são obrigatórios; valores sem coluna de origem ficam vazios. Para evitar trabalho desnecessário em arquivos grandes, a interface lê somente as colunas mapeadas e não calcula perfil estatístico, duplicidades e sugestões de qualidade da CLI. Esses relatórios completos continuam disponíveis pela linha de comando. A seleção automática de unidade e de receitas específicas ainda será construída. Veja a visão do produto em [`docs/target_product_workflow.md`](docs/target_product_workflow.md).
+O Streamlit abre a interface no navegador, servida localmente pelo seu computador. Para testar, use as entradas fictícias em `data/synthetic/farmacia_demo/`. O fluxo guiado apresenta quatro passos: envio, identificação e revisão de mapeamentos, prévia e download. O app usa `estoque.xlsx` e `vendas.xlsx` da pasta `Desktop/Banco de Dados/Modelos principais` quando os arquivos existem; também aceita outra pasta pela variável `DATA_INTELLIGENCE_TEMPLATE_DIR`. Os modelos empresariais ficam fora do repositório. Sem modelos exatos, a exportação é bloqueada. EAN e descrição são obrigatórios; campos sem origem ficam vazios. Para reduzir trabalho em arquivos grandes, a interface lê somente as colunas selecionadas. Na etapa de identificação, aliases exatos têm prioridade e o classificador ML treinado com exemplos sintéticos recomenda correspondências para cabeçalhos restantes. A pessoa usuária revisa essas sugestões; score de ML não é probabilidade calibrada. O app não interpreta valores de colunas sem cabeçalho nem executa o perfil estatístico completo da CLI. Veja [`docs/target_product_workflow.md`](docs/target_product_workflow.md).
 
 ## Executar a ferramenta
 
@@ -397,7 +399,7 @@ python -m data_intelligence caminho\para\estoque_de_outro_sistema.xlsx --report-
 python -m data_intelligence caminho\para\vendas_de_outro_sistema.xlsx --report-type vendas --text-column EAN
 ```
 
-Os nomes de destino são padronizados em `schema/templates.py`. O projeto está começando com um único conector de origem, documentado em `docs/initial_connector_scope.md`; outros conectores ficam fora do escopo atual. Os nomes dessa fonte podem ser acrescentados como aliases depois de revisão. O mecanismo atual compara cabeçalhos por aliases e similaridade de texto. Isso ainda não é machine learning e não aprende sozinho com a abertura de arquivos. No futuro, aliases aprovados manualmente podem formar exemplos rotulados para melhorar as sugestões sem guardar linhas dos relatórios.
+Os nomes de destino são padronizados em `schema/templates.py`. A CLI usa aliases e similaridade textual; o app combina aliases exatos com um classificador de cabeçalhos baseado em scikit-learn. O classificador é treinado com exemplos sintéticos incluídos no projeto e não aprende sozinho com as correções feitas na interface. No futuro, mapeamentos aprovados poderão formar novos exemplos rotulados, guardando somente metadados de esquema e sem linhas de relatórios privados.
 
 ## Configurar regras de qualidade
 
@@ -582,6 +584,7 @@ python examples/validate_pre_ml_dataset.py
 python examples/evaluate_mapping_baseline.py --dataset data/synthetic/farmacia_demo/column_mappings_header_ml_demo.csv
 python examples/evaluate_value_majority_baseline.py
 python examples/evaluate_header_ml_model.py
+python examples/evaluate_selective_header_model.py
 ```
 
 As medições informam Top-1, Top-3 e macro-F1, além dos erros por perfil. Os conjuntos e limitações estão descritos em [`docs/mapping_baseline.md`](docs/mapping_baseline.md) e [`docs/ml_problem_definition.md`](docs/ml_problem_definition.md). Os números são referências sintéticas, não desempenho esperado em sistemas reais. Nenhum desses arquivos representa registros reais de clientes, produtos ou da empresa. Não coloque dados empresariais privados ou credenciais no repositório público.
@@ -604,7 +607,9 @@ python examples/evaluate_header_ml_model.py
 
 O script treina um classificador dentro de cada dobra de validação, mantendo sistemas inteiros fora do treino, e salva apenas as previsões de avaliação em `header_ml_oof_predictions_demo.csv`. Ele não grava um modelo reutilizável. A pontuação exibida pelo classificador não foi calibrada para decidir processamento automático.
 
-Para comparar o classificador com os cabeçalhos dos workbooks `TESTEML` e conferir as saídas já preenchidas pelos mapeamentos explícitos, consulte [a documentação da demonstração de farmácia](data/synthetic/farmacia_demo/README.md). O classificador acertou 20/24 cabeçalhos Top-1 e 23/24 Top-3; a exportação, usando mapeamentos revisados, foi conferida contra os 224 valores esperados.
+No app, o pipeline é treinado em memória a partir do conjunto sintético e fica em cache durante a execução. Aliases conhecidos continuam sendo aplicados primeiro; o ML recomenda campos para os cabeçalhos restantes, sem preencher automaticamente os campos de unidade ou CNPJ. Em avaliação aninhada com abstenção, o modelo aceitou 82/318 sugestões: 78 estavam corretas (**95,1% de precisão seletiva**, com **25,8% de cobertura**). O corte é escolhido dentro do treino de cada dobra e avaliado em perfis inteiros reservados. Esse resultado mostra o custo da cautela: o modelo deixa a maioria dos cabeçalhos sem sugestão. Não é 100%, não foi medido em dados reais e não garante precisão semelhante fora do corpus sintético. Reproduza com `python examples/evaluate_selective_header_model.py`.
+
+Para comparar o classificador com os cabeçalhos dos workbooks `TESTEML` e conferir as saídas já preenchidas pelos mapeamentos explícitos, consulte [a documentação da demonstração de farmácia](data/synthetic/farmacia_demo/README.md). O classificador acertou 20/24 cabeçalhos Top-1 e 23/24 Top-3; a exportação, usando mapeamentos revisados, foi conferida contra os 224 valores esperados. Esses 224/224 verificam somente a exportação com mapeamentos explícitos revisados; não medem a precisão do ML.
 
 Para executar as funções genéricas de lookup e agregação sobre o workbook sintético:
 
@@ -632,10 +637,10 @@ python -m unittest discover -s tests -v
 - A ferramenta trabalha com arquivos tabulares locais e ainda não conecta a bancos, APIs ou nuvem.
 - A CLI imprime resultados no terminal; relatórios em PDF ou HTML ainda não estão implementados.
 - A exportação para Excel exige mapeamentos explícitos e cabeçalhos correspondentes; ainda não há geração automática de modelos nem validação de regras específicas da fonte.
-- As sugestões usam aliases e similaridade textual nos vocabulários de estoque e vendas; ainda não aprendem com aprovações nem entendem completamente o contexto de negócio.
+- A CLI usa aliases e similaridade textual; o app acrescenta ML para sugerir cabeçalhos. Nenhum dos fluxos aprende com aprovações nem entende completamente o contexto de negócio.
 - A detecção de duplicidades exige igualdade da linha completa; ainda não há correspondência aproximada.
 - As regras de qualidade cobrem apenas campos obrigatórios, unicidade explícita e linhas idênticas; ainda não existem limites numéricos, formatos ou regras configuráveis em arquivo.
-- Existe um classificador didático de cabeçalhos avaliado com dados sintéticos, mas ele não está integrado à interface nem escolhe regras de negócio. O modelo não está pronto para operar autonomamente com arquivos de sistemas reais.
+- O classificador de cabeçalhos está integrado ao app como recomendador e foi avaliado com dados sintéticos. Ele não interpreta valores de colunas sem cabeçalho, não escolhe regras de negócio e não está pronto para operar autonomamente em sistemas reais.
 
 ## Próximos passos
 
@@ -646,7 +651,7 @@ O objetivo de longo prazo é uma plataforma que conecte fluxos de trabalho de da
 3. [protótipo implementado] oferecer funções reutilizáveis para lookup exato e agregação; integrar essas regras num fluxo por fonte e ampliar a validação;
 4. [experimento inicial concluído] treinar e avaliar classificador didático de cabeçalhos com scikit-learn;
 5. comparar e aprimorar o classificador; depois, treinar um modelo separado para interpretar perfis de valores, mantendo sistemas inteiros fora do treino;
-6. integrar ML como recomendador revisável, registrando aprovações e mantendo ambiguidades visíveis;
+6. [protótipo integrado] usar ML como recomendador revisável no app; registrar aprovações e manter ambiguidades visíveis;
 7. comparar resultados sintéticos do motor com resultados esperados antes de considerar substituir qualquer automação;
 8. [protótipo criado] iniciar a interface web local com dados sintéticos; em seguida, conectar um catálogo de perfis de unidade e validar as receitas de tratamento;
 9. só depois considerar automação autônoma de casos confiáveis, novas fontes, banco de dados e execução em ambiente empresarial aprovado.

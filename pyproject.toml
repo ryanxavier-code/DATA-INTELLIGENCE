@@ -17,7 +17,7 @@ data-intelligence = "data_intelligence.cli:main"
 dev = ["pytest>=8"]
 excel = ["openpyxl>=3.1", "xlrd>=2.0"]
 ml = ["scikit-learn>=1.5"]
-app = ["streamlit>=1.40"]
+app = ["streamlit>=1.40", "scikit-learn>=1.5"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

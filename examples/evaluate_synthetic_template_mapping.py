@@ -14,9 +14,8 @@ import json
 from pathlib import Path
 
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.pipeline import Pipeline
+
+from data_intelligence.ml import build_header_classifier
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -64,29 +63,6 @@ REPORTS = {
 }
 
 
-def _build_model() -> Pipeline:
-    return Pipeline(
-        steps=[
-            (
-                "tfidf",
-                TfidfVectorizer(
-                    analyzer="char_wb",
-                    ngram_range=(2, 5),
-                    lowercase=True,
-                    strip_accents="unicode",
-                    sublinear_tf=True,
-                ),
-            ),
-            (
-                "classifier",
-                LogisticRegression(
-                    class_weight="balanced", max_iter=2000, random_state=42
-                ),
-            ),
-        ]
-    )
-
-
 def main() -> None:
     training = pd.read_csv(DATA_DIR / "column_mappings_header_ml_demo.csv")
     train_text = (
@@ -94,7 +70,7 @@ def main() -> None:
         + " [SEP] "
         + training["source_column"].astype(str)
     )
-    model = _build_model().fit(train_text, training["canonical_field"].astype(str))
+    model = build_header_classifier().fit(train_text, training["canonical_field"].astype(str))
     seen_inputs = {
         (str(row.report_type).casefold(), str(row.source_column).casefold())
         for row in training.itertuples(index=False)
