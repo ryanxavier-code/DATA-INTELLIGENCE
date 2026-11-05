@@ -2,7 +2,7 @@
 
 > Ferramenta em Python para inspecionar arquivos tabulares, entender sua qualidade e preparar uma representação consistente dos dados.
 
-> **Status:** MVP educacional para portfólio. O repositório reúne uma biblioteca Python, uma CLI, um aplicativo local em Streamlit, exemplos sintéticos e um experimento inicial de ML. A interface permite revisar o mapeamento de colunas e exportar uma cópia do modelo escolhido. O ML ainda é experimental, não está integrado ao fluxo da interface e não processa fontes de forma autônoma. O projeto ainda precisa de validação antes de qualquer uso operacional.
+> **Status:** MVP aplicado, em piloto local. A ferramenta já é usada no trabalho para preparar relatórios tabulares, com revisão dos mapeamentos e exportação para modelos Excel. O repositório público contém apenas exemplos sintéticos; arquivos, cadastros e dados empresariais ficam fora dele. O ML é experimental e ainda não participa do tratamento feito pelo app.
 
 ## Índice
 
@@ -31,7 +31,7 @@
 
 ## Visão geral
 
-O **Data Intelligence Engine** é um projeto de aprendizado voltado à engenharia de dados e à engenharia de machine learning. Seu propósito é criar uma base organizada para receber tabelas, observar problemas e preparar dados de maneira rastreável antes de qualquer etapa de modelagem.
+O **Data Intelligence Engine** é um projeto aplicado de engenharia de dados, desenvolvido também como trilha de aprendizado em engenharia de machine learning. Seu propósito é receber tabelas, encontrar problemas e preparar dados de maneira rastreável. O fluxo atual já apoia uma atividade real de trabalho; o objetivo de longo prazo é ampliar sua capacidade para reconhecer formatos e automatizar tratamentos com segurança.
 
 Esta versão contém uma biblioteca Python reutilizável, uma interface de linha de comando (CLI) e um aplicativo local em Streamlit. A CLI faz uma análise descritiva mais ampla; o app guia o envio, o mapeamento revisável e a exportação de uma planilha. Os exemplos e conjuntos usados no experimento de ML são sintéticos.
 
@@ -82,9 +82,9 @@ Este projeto demonstra prática na construção de uma ferramenta de dados em Py
 
 ### Resumo profissional do projeto
 
-> MVP em Python para análise e padronização de dados tabulares. Combina biblioteca modular, CLI e interface local em Streamlit, com ingestão de CSV/Excel, perfilamento, verificações de qualidade, mapeamento revisável de esquemas, transformações reutilizáveis, exportação para modelos Excel e experimento de classificação de cabeçalhos com scikit-learn avaliado em dados sintéticos.
+> MVP aplicado em Python para análise e padronização de dados tabulares, usado como piloto local no tratamento de relatórios de trabalho. Combina biblioteca modular, CLI e interface Streamlit, com ingestão de CSV/Excel, perfilamento, verificações de qualidade, mapeamento revisável, transformações reutilizáveis e exportação para modelos Excel. Também inclui um experimento de classificação de cabeçalhos com scikit-learn avaliado somente em dados sintéticos.
 
-**Como apresentar o nível:** é um projeto de portfólio em evolução que evidencia prática aplicada e fundamentos de engenharia de dados e ML. O classificador ainda é experimental, não está integrado ao app e não está pronto para tratar dados de produção de forma autônoma. Essa distinção ajuda a explicar tanto as decisões técnicas quanto os próximos passos com precisão.
+**Como apresentar o nível:** não é apenas um exercício acadêmico: é um MVP aplicado que já apoia um fluxo real, ainda com revisão humana e regras conhecidas. A generalização para diferentes sistemas e a automação autônoma continuam em desenvolvimento. O classificador de ML é experimental, não está integrado ao app e não escolhe as regras de tratamento.
 
 ## Produto pretendido
 
