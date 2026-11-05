@@ -8,6 +8,7 @@
 
 - [Visão geral](#visão-geral)
 - [Tecnologias e ferramentas](#tecnologias-e-ferramentas)
+- [Competências técnicas evidenciadas](#competências-técnicas-evidenciadas)
 - [Objetivos de aprendizado](#objetivos-de-aprendizado)
 - [O que a versão atual faz](#o-que-a-versão-atual-faz)
 - [O que ainda não faz](#o-que-ainda-não-faz)
@@ -63,6 +64,27 @@ O app pode sugerir associações por nomes conhecidos, mas ainda exibe os campos
 | `abrir_data_intelligence.bat` | Raiz do projeto | Atalho para iniciar o app no Windows; usa o Python do `.venv` quando ele existe. |
 
 As bibliotecas e suas dependências opcionais estão declaradas em [`pyproject.toml`](pyproject.toml). A instalação escolhida determina quais recursos ficam disponíveis: `excel` adiciona suporte a Excel, `app` instala Streamlit, `ml` instala scikit-learn e `dev` instala pytest.
+
+## Competências técnicas evidenciadas
+
+Este projeto demonstra prática na construção de uma ferramenta de dados em Python. A tabela associa as competências a implementações que podem ser conferidas diretamente no repositório:
+
+| Competência | O que foi implementado | Evidência no repositório |
+| --- | --- | --- |
+| Python e organização de software | Pacote dividido por responsabilidades, funções reutilizáveis, validações de entrada e tratamento de erros. | [`src/data_intelligence/`](src/data_intelligence/) e [`pyproject.toml`](pyproject.toml) |
+| Engenharia de dados | Ingestão de CSV/Excel, limpeza explícita, padronização de esquemas, lookup por chave, agregação e exportação para modelos Excel. | [`ingestion/`](src/data_intelligence/ingestion/), [`transforms/`](src/data_intelligence/transforms/) e [`canonical/`](src/data_intelligence/canonical/) |
+| Qualidade e perfilamento | Métricas de ausências, valores distintos e repetidos, tipos aparentes e verificações configuráveis. | [`profiling/`](src/data_intelligence/profiling/) e [`quality/`](src/data_intelligence/quality/) |
+| Fundamentos de engenharia de ML | Preparação de exemplos sintéticos rotulados, comparação com uma linha de base e avaliação separando perfis de sistemas entre treino e validação. | [`examples/generate_synthetic_ml_dataset.py`](examples/generate_synthetic_ml_dataset.py), [`examples/evaluate_mapping_baseline.py`](examples/evaluate_mapping_baseline.py) e [`docs/mapping_baseline.md`](docs/mapping_baseline.md) |
+| ML com scikit-learn | Pipeline de TF-IDF de caracteres e regressão logística para classificar cabeçalhos; métricas Top-1, Top-3 e macro-F1. | [`examples/evaluate_header_ml_model.py`](examples/evaluate_header_ml_model.py) |
+| Interface de aplicação | Fluxo Streamlit para enviar arquivos, identificar relatório, revisar mapeamentos, visualizar prévia e baixar resultado. | [`app/streamlit_app.py`](app/streamlit_app.py) |
+| Qualidade de software | Testes unitários para ingestão, perfilamento, esquema, motor e CLI, além de exemplos sintéticos com gabaritos verificáveis. | [`tests/unit/`](tests/unit/) e [`data/synthetic/`](data/synthetic/) |
+| Documentação e versionamento | Guias de instalação e uso, documentação do problema de ML e arquitetura organizada em Git. | [`README.md`](README.md), [`docs/`](docs/) e histórico Git |
+
+### Resumo profissional do projeto
+
+> MVP em Python para análise e padronização de dados tabulares. Combina biblioteca modular, CLI e interface local em Streamlit, com ingestão de CSV/Excel, perfilamento, verificações de qualidade, mapeamento revisável de esquemas, transformações reutilizáveis, exportação para modelos Excel e experimento de classificação de cabeçalhos com scikit-learn avaliado em dados sintéticos.
+
+**Como apresentar o nível:** é um projeto de portfólio em evolução que evidencia prática aplicada e fundamentos de engenharia de dados e ML. O classificador ainda é experimental, não está integrado ao app e não está pronto para tratar dados de produção de forma autônoma. Essa distinção ajuda a explicar tanto as decisões técnicas quanto os próximos passos com precisão.
 
 ## Produto pretendido
 
