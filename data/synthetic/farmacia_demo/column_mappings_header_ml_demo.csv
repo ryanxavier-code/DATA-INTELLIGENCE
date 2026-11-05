@@ -1,0 +1,319 @@
+﻿source_profile,report_type,source_column,canonical_field
+FarmaNuvem,estoque,Código de barras,ean
+FarmaNuvem,estoque,Item comercial,descricao_produto
+FarmaNuvem,estoque,Seção comercial,grupo
+FarmaNuvem,estoque,Departamento,subgrupo
+FarmaNuvem,estoque,Fabricante cadastrado,laboratorio
+FarmaNuvem,estoque,Saldo do produto,quantidade
+FarmaNuvem,estoque,Rotação mensal,giro_mensal
+FarmaNuvem,estoque,Montante de aquisição,valor_total_custo
+FarmaNuvem,estoque,Valor médio de compra,custo_medio
+FarmaNuvem,estoque,Receita líquida dos itens,valor_total_liquido
+FarmaNuvem,estoque,Estabelecimento comercial,unidade
+RedeCuidar,vendas,Mês de faturamento,mes
+RedeCuidar,vendas,Identificador numérico da loja,filial
+RedeCuidar,vendas,Item GTIN,ean
+RedeCuidar,vendas,Produto/descrição,descricao_produto
+RedeCuidar,vendas,Família,grupo
+RedeCuidar,vendas,Divisão de produto,subgrupo
+RedeCuidar,vendas,Indústria responsável,laboratorio
+RedeCuidar,vendas,Existência atual,quantidade
+RedeCuidar,vendas,Venda antes de descontos,valor_total_bruto
+RedeCuidar,vendas,Total comercial líquido,valor_total_liquido
+RedeCuidar,vendas,Total de custo,valor_total_custo
+RedeCuidar,vendas,Resultado financeiro bruto,lucro_bruto
+RedeCuidar,vendas,Maior redução autorizada,desconto_maximo
+RedeCuidar,vendas,Desconto base da venda,desconto_padrao
+RedeCuidar,vendas,Benefício comercial especial,desconto_preferencial
+RedeCuidar,vendas,Unidade de negócio,unidade
+PontoSaude,estoque,GTIN-13,ean
+PontoSaude,estoque,Item do catálogo,descricao_produto
+PontoSaude,estoque,Setor,grupo
+PontoSaude,estoque,Categoria filha,subgrupo
+PontoSaude,estoque,Marca registrada do produto,laboratorio
+PontoSaude,estoque,Quantidade em mãos,quantidade
+PontoSaude,estoque,Unidades movimentadas no mês,giro_mensal
+PontoSaude,estoque,Custo contabilizado,valor_total_custo
+PontoSaude,estoque,Valor médio de custo,custo_medio
+PontoSaude,estoque,Valor Vendido,valor_total_liquido
+PontoSaude,estoque,Unidade operacional,unidade
+PontoSaude,vendas,Competência venda,mes
+PontoSaude,vendas,Unidade numérica de venda,filial
+PontoSaude,vendas,GTIN do item,ean
+PontoSaude,vendas,Descrição produto,descricao_produto
+PontoSaude,vendas,Categoria de produto,grupo
+PontoSaude,vendas,Classificação secundária,subgrupo
+PontoSaude,vendas,Marca do produto,laboratorio
+PontoSaude,vendas,Qtd disponível,quantidade
+PontoSaude,vendas,Faturamento sem abatimentos,valor_total_bruto
+PontoSaude,vendas,Valor líquido vendido,valor_total_liquido
+PontoSaude,vendas,Valor custo estoque,valor_total_custo
+PontoSaude,vendas,Valor de lucro antes de despesas,lucro_bruto
+PontoSaude,vendas,Limite de desconto total,desconto_maximo
+PontoSaude,vendas,Percentual de redução padrão,desconto_padrao
+PontoSaude,vendas,Desconto para fidelidade,desconto_preferencial
+PontoSaude,vendas,Identificação da loja,unidade
+Drogaria360,estoque,GTIN cadastrado,ean
+Drogaria360,estoque,Denominação,descricao_produto
+Drogaria360,estoque,Classificação,grupo
+Drogaria360,estoque,Linha específica,subgrupo
+Drogaria360,estoque,Fabricante do item,laboratorio
+Drogaria360,estoque,Quantidade em saldo,quantidade
+Drogaria360,estoque,Média mensal de unidades,giro_mensal
+Drogaria360,estoque,Valor de aquisição total,valor_total_custo
+Drogaria360,estoque,Custo ponderado médio,custo_medio
+Drogaria360,estoque,Receita após abatimentos,valor_total_liquido
+Drogaria360,estoque,Unidade cadastrada,unidade
+Drogaria360,vendas,Competência do relatório,mes
+Drogaria360,vendas,Código da filial,filial
+Drogaria360,vendas,Referência EAN,ean
+Drogaria360,vendas,Nome produto,descricao_produto
+Drogaria360,vendas,Categoria comercial,grupo
+Drogaria360,vendas,Classe secundária,subgrupo
+Drogaria360,vendas,Fabricante principal,laboratorio
+Drogaria360,vendas,Saldo físico,quantidade
+Drogaria360,vendas,Total comercial bruto,valor_total_bruto
+Drogaria360,vendas,Valor recebido líquido,valor_total_liquido
+Drogaria360,vendas,Investimento total,valor_total_custo
+Drogaria360,vendas,Ganho comercial bruto,lucro_bruto
+Drogaria360,vendas,Desconto máximo aplicável,desconto_maximo
+Drogaria360,vendas,Percentual padrão aplicado,desconto_padrao
+Drogaria360,vendas,Redução de preço preferencial,desconto_preferencial
+Drogaria360,vendas,Loja emitente,unidade
+PharmaLink,vendas,Período da venda,mes
+PharmaLink,vendas,Código interno da loja,filial
+PharmaLink,vendas,Código de barras,ean
+PharmaLink,vendas,Item comercial,descricao_produto
+PharmaLink,vendas,Seção comercial,grupo
+PharmaLink,vendas,Família de segundo nível,subgrupo
+PharmaLink,vendas,Fabricante cadastrado,laboratorio
+PharmaLink,vendas,Saldo do produto,quantidade
+PharmaLink,vendas,Valor original das vendas,valor_total_bruto
+PharmaLink,vendas,Receita líquida dos itens,valor_total_liquido
+PharmaLink,vendas,Custo do saldo,valor_total_custo
+PharmaLink,vendas,Ganho bruto por item,lucro_bruto
+PharmaLink,vendas,Maior percentual de desconto,desconto_maximo
+PharmaLink,vendas,Taxa regular de desconto,desconto_padrao
+PharmaLink,vendas,Redução preferencial,desconto_preferencial
+PharmaLink,vendas,Loja,unidade
+SaudeMaisERP,estoque,Referência do item,ean
+SaudeMaisERP,estoque,Descrição resumida,descricao_produto
+SaudeMaisERP,estoque,Família comercial,grupo
+SaudeMaisERP,estoque,Nível de grupo 2,subgrupo
+SaudeMaisERP,estoque,Fornecedor fabricante,laboratorio
+SaudeMaisERP,estoque,Unidades restantes,quantidade
+SaudeMaisERP,estoque,Giro mensal,giro_mensal
+SaudeMaisERP,estoque,Custo dos itens,valor_total_custo
+SaudeMaisERP,estoque,Custo por unidade médio,custo_medio
+SaudeMaisERP,estoque,Líquido dos produtos,valor_total_liquido
+SaudeMaisERP,estoque,Unidade de venda,unidade
+MedGestor,vendas,Período de referência,mes
+MedGestor,vendas,Identificador da loja de venda,filial
+MedGestor,vendas,GTIN-13,ean
+MedGestor,vendas,Item do catálogo,descricao_produto
+MedGestor,vendas,Setor,grupo
+MedGestor,vendas,Subcategoria,subgrupo
+MedGestor,vendas,Marca registrada do produto,laboratorio
+MedGestor,vendas,Quantidade em mãos,quantidade
+MedGestor,vendas,Valor total sem deduções,valor_total_bruto
+MedGestor,vendas,Valor Vendido,valor_total_liquido
+MedGestor,vendas,Montante em custo,valor_total_custo
+MedGestor,vendas,Lucro da operação antes de despesas,lucro_bruto
+MedGestor,vendas,Limite superior promocional,desconto_maximo
+MedGestor,vendas,Desconto regular,desconto_padrao
+MedGestor,vendas,Desconto para cliente cadastrado,desconto_preferencial
+MedGestor,vendas,Centro de operação,unidade
+FarmaciaDigital,estoque,EAN produto,ean
+FarmaciaDigital,estoque,Descrição mercantil,descricao_produto
+FarmaciaDigital,estoque,Divisão,grupo
+FarmaciaDigital,estoque,Classificação secundária,subgrupo
+FarmaciaDigital,estoque,Produtor do item,laboratorio
+FarmaciaDigital,estoque,Quantidade registrada,quantidade
+FarmaciaDigital,estoque,Giro médio mensal,giro_mensal
+FarmaciaDigital,estoque,Valor investido,valor_total_custo
+FarmaciaDigital,estoque,Custo médio,custo_medio
+FarmaciaDigital,estoque,Receita final,valor_total_liquido
+FarmaciaDigital,estoque,Ponto de estoque,unidade
+FarmaciaDigital,vendas,Mês de apuração,mes
+FarmaciaDigital,vendas,Loja responsável pela venda,filial
+FarmaciaDigital,vendas,Identificador GTIN,ean
+FarmaciaDigital,vendas,Nome de catálogo,descricao_produto
+FarmaciaDigital,vendas,Grupo de mercadorias,grupo
+FarmaciaDigital,vendas,Categoria complementar,subgrupo
+FarmaciaDigital,vendas,Indústria do produto,laboratorio
+FarmaciaDigital,vendas,Quantidade física,quantidade
+FarmaciaDigital,vendas,Total antes de descontos,valor_total_bruto
+FarmaciaDigital,vendas,Valor líquido faturado,valor_total_liquido
+FarmaciaDigital,vendas,Custo contabilizado,valor_total_custo
+FarmaciaDigital,vendas,Resultado bruto da venda,lucro_bruto
+FarmaciaDigital,vendas,Máximo abatimento permitido,desconto_maximo
+FarmaciaDigital,vendas,Desconto operacional usual,desconto_padrao
+FarmaciaDigital,vendas,Desconto de cliente VIP,desconto_preferencial
+FarmaciaDigital,vendas,Unidade operacional,unidade
+SistemaFicticio11,estoque,EAN comercial,ean
+SistemaFicticio11,estoque,Nome reduzido,descricao_produto
+SistemaFicticio11,estoque,Segmento mercadológico,grupo
+SistemaFicticio11,estoque,Classe secundária,subgrupo
+SistemaFicticio11,estoque,Fornecedor principal,laboratorio
+SistemaFicticio11,estoque,Unidades no estoque,quantidade
+SistemaFicticio11,estoque,Rotatividade mensal,giro_mensal
+SistemaFicticio11,estoque,Montante de custo total,valor_total_custo
+SistemaFicticio11,estoque,Aquisição média unitária,custo_medio
+SistemaFicticio11,estoque,Montante após abatimento,valor_total_liquido
+SistemaFicticio11,estoque,Local de operação,unidade
+SistemaFicticio11,vendas,Mês comercial,mes
+SistemaFicticio11,vendas,Código da unidade emissora,filial
+SistemaFicticio11,vendas,Código GTIN,ean
+SistemaFicticio11,vendas,Apresentação comercial,descricao_produto
+SistemaFicticio11,vendas,Tipo de produto,grupo
+SistemaFicticio11,vendas,Segmento de catálogo,subgrupo
+SistemaFicticio11,vendas,Laboratório responsável,laboratorio
+SistemaFicticio11,vendas,Saldo disponível,quantidade
+SistemaFicticio11,vendas,Bruto dos produtos,valor_total_bruto
+SistemaFicticio11,vendas,Líquido da operação,valor_total_liquido
+SistemaFicticio11,vendas,Valor de aquisição total,valor_total_custo
+SistemaFicticio11,vendas,Valor bruto de ganho,lucro_bruto
+SistemaFicticio11,vendas,Percentual máximo de redução,desconto_maximo
+SistemaFicticio11,vendas,Abatimento de rotina,desconto_padrao
+SistemaFicticio11,vendas,Percentual de desconto fidelidade,desconto_preferencial
+SistemaFicticio11,vendas,Unidade cadastrada,unidade
+SistemaFicticio12,vendas,Referência mensal,mes
+SistemaFicticio12,vendas,Número da filial,filial
+SistemaFicticio12,vendas,Referência do item,ean
+SistemaFicticio12,vendas,Descrição resumida,descricao_produto
+SistemaFicticio12,vendas,Família comercial,grupo
+SistemaFicticio12,vendas,Tipo secundário,subgrupo
+SistemaFicticio12,vendas,Fornecedor fabricante,laboratorio
+SistemaFicticio12,vendas,Unidades restantes,quantidade
+SistemaFicticio12,vendas,Valor vendido bruto,valor_total_bruto
+SistemaFicticio12,vendas,Líquido dos produtos,valor_total_liquido
+SistemaFicticio12,vendas,Total de aquisição,valor_total_custo
+SistemaFicticio12,vendas,Margem bruta em valor,lucro_bruto
+SistemaFicticio12,vendas,Desconto máximo da loja,desconto_maximo
+SistemaFicticio12,vendas,Abatimento padrão da loja,desconto_padrao
+SistemaFicticio12,vendas,Percentual de benefício especial,desconto_preferencial
+SistemaFicticio12,vendas,Código da unidade,unidade
+SistemaFicticio13,estoque,Código global,ean
+SistemaFicticio13,estoque,Medicamento,descricao_produto
+SistemaFicticio13,estoque,Segmento,grupo
+SistemaFicticio13,estoque,Classificação detalhada,subgrupo
+SistemaFicticio13,estoque,Nome do fabricante,laboratorio
+SistemaFicticio13,estoque,Itens em estoque,quantidade
+SistemaFicticio13,estoque,Saída mensal média,giro_mensal
+SistemaFicticio13,estoque,Custo acumulado,valor_total_custo
+SistemaFicticio13,estoque,Valor unitário médio de custo,custo_medio
+SistemaFicticio13,estoque,Total líquido comercializado,valor_total_liquido
+SistemaFicticio13,estoque,Farmácia,unidade
+SistemaFicticio14,vendas,Data-base mensal,mes
+SistemaFicticio14,vendas,Loja de faturamento,filial
+SistemaFicticio14,vendas,EAN produto,ean
+SistemaFicticio14,vendas,Descrição mercantil,descricao_produto
+SistemaFicticio14,vendas,Divisão,grupo
+SistemaFicticio14,vendas,Subdivisão comercial,subgrupo
+SistemaFicticio14,vendas,Produtor do item,laboratorio
+SistemaFicticio14,vendas,Quantidade registrada,quantidade
+SistemaFicticio14,vendas,Total bruto dos itens,valor_total_bruto
+SistemaFicticio14,vendas,Receita final,valor_total_liquido
+SistemaFicticio14,vendas,Custo do estoque,valor_total_custo
+SistemaFicticio14,vendas,Margem financeira bruta,lucro_bruto
+SistemaFicticio14,vendas,Abatimento máximo autorizado,desconto_maximo
+SistemaFicticio14,vendas,Percentual habitual de desconto,desconto_padrao
+SistemaFicticio14,vendas,Desconto de convênio,desconto_preferencial
+SistemaFicticio14,vendas,Ponto de venda,unidade
+SistemaFicticio15,estoque,Barcode,ean
+SistemaFicticio15,estoque,Produto cadastrado,descricao_produto
+SistemaFicticio15,estoque,Agrupador,grupo
+SistemaFicticio15,estoque,Categoria complementar,subgrupo
+SistemaFicticio15,estoque,Origem laboratorial,laboratorio
+SistemaFicticio15,estoque,Estoque atual,quantidade
+SistemaFicticio15,estoque,Saídas por mês,giro_mensal
+SistemaFicticio15,estoque,Valor de custo agregado,valor_total_custo
+SistemaFicticio15,estoque,Custo médio atual,custo_medio
+SistemaFicticio15,estoque,Total recebido,valor_total_liquido
+SistemaFicticio15,estoque,Unidade de negócio,unidade
+SistemaFicticio15,vendas,Mês da venda,mes
+SistemaFicticio15,vendas,Identificador do ponto comercial,filial
+SistemaFicticio15,vendas,EAN principal,ean
+SistemaFicticio15,vendas,Produto da venda,descricao_produto
+SistemaFicticio15,vendas,Classe do item,grupo
+SistemaFicticio15,vendas,Subgrupo mercantil,subgrupo
+SistemaFicticio15,vendas,Marca comercial,laboratorio
+SistemaFicticio15,vendas,Volume em saldo,quantidade
+SistemaFicticio15,vendas,Total bruto comercializado,valor_total_bruto
+SistemaFicticio15,vendas,Valor líquido recebido,valor_total_liquido
+SistemaFicticio15,vendas,Valor investido,valor_total_custo
+SistemaFicticio15,vendas,Lucro bruto,lucro_bruto
+SistemaFicticio15,vendas,Percentual teto de abatimento,desconto_maximo
+SistemaFicticio15,vendas,Percentual comum de desconto,desconto_padrao
+SistemaFicticio15,vendas,Abatimento para cliente preferencial,desconto_preferencial
+SistemaFicticio15,vendas,Ponto de estoque,unidade
+SistemaFicticio17,estoque,Item GTIN,ean
+SistemaFicticio17,estoque,Produto/descrição,descricao_produto
+SistemaFicticio17,estoque,Família,grupo
+SistemaFicticio17,estoque,Segmento de catálogo,subgrupo
+SistemaFicticio17,estoque,Indústria responsável,laboratorio
+SistemaFicticio17,estoque,Existência atual,quantidade
+SistemaFicticio17,estoque,Consumo médio mensal,giro_mensal
+SistemaFicticio17,estoque,Valor custo estoque,valor_total_custo
+SistemaFicticio17,estoque,Média de custo unitário,custo_medio
+SistemaFicticio17,estoque,Montante líquido,valor_total_liquido
+SistemaFicticio17,estoque,Loja de origem,unidade
+SistemaFicticio17,vendas,Período comercial,mes
+SistemaFicticio17,vendas,Referência numérica da filial,filial
+SistemaFicticio17,vendas,Identificador universal,ean
+SistemaFicticio17,vendas,Nome do item,descricao_produto
+SistemaFicticio17,vendas,Linha de catálogo,grupo
+SistemaFicticio17,vendas,Ramo do produto,subgrupo
+SistemaFicticio17,vendas,Empresa fabricante,laboratorio
+SistemaFicticio17,vendas,Unidades armazenadas,quantidade
+SistemaFicticio17,vendas,Montante bruto,valor_total_bruto
+SistemaFicticio17,vendas,Total líquido dos itens,valor_total_liquido
+SistemaFicticio17,vendas,Montante de custo total,valor_total_custo
+SistemaFicticio17,vendas,Resultado bruto comercial,lucro_bruto
+SistemaFicticio17,vendas,Teto percentual de redução,desconto_maximo
+SistemaFicticio17,vendas,Desconto padrão,desconto_padrao
+SistemaFicticio17,vendas,Abatimento de cliente especial,desconto_preferencial
+SistemaFicticio17,vendas,Local de operação,unidade
+SistemaFicticio18,vendas,Competência,mes
+SistemaFicticio18,vendas,Código da loja de origem,filial
+SistemaFicticio18,vendas,Código global,ean
+SistemaFicticio18,vendas,Medicamento,descricao_produto
+SistemaFicticio18,vendas,Segmento,grupo
+SistemaFicticio18,vendas,Categoria filha,subgrupo
+SistemaFicticio18,vendas,Nome do fabricante,laboratorio
+SistemaFicticio18,vendas,Itens em estoque,quantidade
+SistemaFicticio18,vendas,Valor de tabela vendido,valor_total_bruto
+SistemaFicticio18,vendas,Total líquido comercializado,valor_total_liquido
+SistemaFicticio18,vendas,Custo total dos produtos,valor_total_custo
+SistemaFicticio18,vendas,Retorno bruto da venda,lucro_bruto
+SistemaFicticio18,vendas,Limite máximo promocional,desconto_maximo
+SistemaFicticio18,vendas,Desconto comercial base,desconto_padrao
+SistemaFicticio18,vendas,Desconto preferencial,desconto_preferencial
+SistemaFicticio18,vendas,Estabelecimento,unidade
+SistemaFicticio19,estoque,Número de barras,ean
+SistemaFicticio19,estoque,Descrição do item,descricao_produto
+SistemaFicticio19,estoque,Categoria,grupo
+SistemaFicticio19,estoque,Segmento específico,subgrupo
+SistemaFicticio19,estoque,Indústria fabricante,laboratorio
+SistemaFicticio19,estoque,Unidades disponíveis,quantidade
+SistemaFicticio19,estoque,Volume mensal movimentado,giro_mensal
+SistemaFicticio19,estoque,Investimento total,valor_total_custo
+SistemaFicticio19,estoque,Média ponderada de custo,custo_medio
+SistemaFicticio19,estoque,Total comercial líquido,valor_total_liquido
+SistemaFicticio19,estoque,Loja,unidade
+SistemaFicticio20,vendas,Mês referência,mes
+SistemaFicticio20,vendas,ID do estabelecimento vendedor,filial
+SistemaFicticio20,vendas,Barcode,ean
+SistemaFicticio20,vendas,Produto cadastrado,descricao_produto
+SistemaFicticio20,vendas,Agrupador,grupo
+SistemaFicticio20,vendas,Linha específica,subgrupo
+SistemaFicticio20,vendas,Origem laboratorial,laboratorio
+SistemaFicticio20,vendas,Estoque atual,quantidade
+SistemaFicticio20,vendas,Valor sem desconto,valor_total_bruto
+SistemaFicticio20,vendas,Total recebido,valor_total_liquido
+SistemaFicticio20,vendas,Custo consolidado,valor_total_custo
+SistemaFicticio20,vendas,Lucro comercial bruto,lucro_bruto
+SistemaFicticio20,vendas,Desconto máximo cadastrado,desconto_maximo
+SistemaFicticio20,vendas,Desconto corrente,desconto_padrao
+SistemaFicticio20,vendas,Benefício percentual preferencial,desconto_preferencial
+SistemaFicticio20,vendas,Unidade emissora,unidade

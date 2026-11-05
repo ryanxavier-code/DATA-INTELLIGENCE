@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "data-intelligence-engine"
+version = "0.1.0"
+description = "Ferramenta modular para qualidade e padronização de dados"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.2"]
+
+[project.scripts]
+data-intelligence = "data_intelligence.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+excel = ["openpyxl>=3.1", "xlrd>=2.0"]
+ml = ["scikit-learn>=1.5"]
+app = ["streamlit>=1.40"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

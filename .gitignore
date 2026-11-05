@@ -1,0 +1,50 @@
+# Python bytecode and local runtime
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+
+# Build and package artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Tests, coverage, and tooling caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Local databases and logs
+*.sqlite3
+*.db
+*.log
+
+# Private or generated data (keep synthetic examples in data/synthetic/)
+/data/raw/
+/data/private/
+/data/processed/
+/reports/
+
+# Temporary test folders created at the project root
+/.tmp/
+/tmp*/
+/.tmp_spreadsheets/
+*.xlsx.inspect.ndjson
+
+# Operating system files
+.DS_Store
+Thumbs.db

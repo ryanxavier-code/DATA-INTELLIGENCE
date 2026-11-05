@@ -1,0 +1,121 @@
+source_profile,report_type,source_column,canonical_field
+FarmaNuvem,estoque,Código de barras,ean
+FarmaNuvem,estoque,Nome comercial,descricao_produto
+FarmaNuvem,estoque,Setor,grupo
+FarmaNuvem,estoque,Saldo disponível,quantidade
+FarmaNuvem,estoque,Custo do estoque,valor_total_custo
+FarmaNuvem,estoque,Filial,unidade
+FarmaNuvem,vendas,GTIN,ean
+FarmaNuvem,vendas,Item vendido,descricao_produto
+FarmaNuvem,vendas,Unidades comercializadas,quantidade
+FarmaNuvem,vendas,Receita bruta,valor_total_bruto
+FarmaNuvem,vendas,Receita líquida,valor_total_liquido
+FarmaNuvem,vendas,Estabelecimento,unidade
+RedeCuidar,estoque,GTIN do produto,ean
+RedeCuidar,estoque,Descrição do item,descricao_produto
+RedeCuidar,estoque,Categoria comercial,grupo
+RedeCuidar,estoque,Quantidade em mãos,quantidade
+RedeCuidar,estoque,Valor de aquisição total,valor_total_custo
+RedeCuidar,estoque,Loja,unidade
+RedeCuidar,vendas,Código EAN,ean
+RedeCuidar,vendas,Produto comercializado,descricao_produto
+RedeCuidar,vendas,Qtd. vendida,quantidade
+RedeCuidar,vendas,Total antes de descontos,valor_total_bruto
+RedeCuidar,vendas,Total recebido,valor_total_liquido
+RedeCuidar,vendas,Código da loja,unidade
+PontoSaude,estoque,Identificador GTIN,ean
+PontoSaude,estoque,Apresentação do produto,descricao_produto
+PontoSaude,estoque,Família,grupo
+PontoSaude,estoque,Saldo físico,quantidade
+PontoSaude,estoque,Montante em custo,valor_total_custo
+PontoSaude,estoque,Unidade operacional,unidade
+PontoSaude,vendas,Identificação do produto (GTIN),ean
+PontoSaude,vendas,Descrição comercial,descricao_produto
+PontoSaude,vendas,Volume vendido,quantidade
+PontoSaude,vendas,Valor original das vendas,valor_total_bruto
+PontoSaude,vendas,Valor líquido recebido,valor_total_liquido
+PontoSaude,vendas,Unidade operacional,unidade
+BoticaCloud,estoque,Barcode do item,ean
+BoticaCloud,estoque,Nome do medicamento,descricao_produto
+BoticaCloud,estoque,Seção,grupo
+BoticaCloud,estoque,Existência atual,quantidade
+BoticaCloud,estoque,Investimento em produtos,valor_total_custo
+BoticaCloud,estoque,Código da unidade,unidade
+BoticaCloud,vendas,Barcode,ean
+BoticaCloud,vendas,Medicamento,descricao_produto
+BoticaCloud,vendas,Itens baixados,quantidade
+BoticaCloud,vendas,Faturamento sem abatimentos,valor_total_bruto
+BoticaCloud,vendas,Receita após abatimentos,valor_total_liquido
+BoticaCloud,vendas,Loja responsável,unidade
+Drogaria360,estoque,Código GTIN,ean
+Drogaria360,estoque,Descrição do produto,descricao_produto
+Drogaria360,estoque,Departamento comercial,grupo
+Drogaria360,estoque,Saldo em unidades,quantidade
+Drogaria360,estoque,Total de custo,valor_total_custo
+Drogaria360,estoque,Identificação da filial,unidade
+Drogaria360,vendas,GTIN/EAN,ean
+Drogaria360,vendas,Descrição do medicamento,descricao_produto
+Drogaria360,vendas,Quantidade faturada,quantidade
+Drogaria360,vendas,Valor sem desconto,valor_total_bruto
+Drogaria360,vendas,Valor recebido líquido,valor_total_liquido
+Drogaria360,vendas,Filial responsável,unidade
+PharmaLink,estoque,Barcode produto,ean
+PharmaLink,estoque,Item do catálogo,descricao_produto
+PharmaLink,estoque,Segmento,grupo
+PharmaLink,estoque,Saldo no depósito,quantidade
+PharmaLink,estoque,Custo acumulado,valor_total_custo
+PharmaLink,estoque,Estabelecimento de origem,unidade
+PharmaLink,vendas,GTIN produto,ean
+PharmaLink,vendas,Nome do item,descricao_produto
+PharmaLink,vendas,Unidades faturadas,quantidade
+PharmaLink,vendas,Montante bruto,valor_total_bruto
+PharmaLink,vendas,Montante líquido,valor_total_liquido
+PharmaLink,vendas,Loja de origem,unidade
+SaudeMaisERP,estoque,Identificador do produto,ean
+SaudeMaisERP,estoque,Nome/apresentação,descricao_produto
+SaudeMaisERP,estoque,Grupo de mercadorias,grupo
+SaudeMaisERP,estoque,Quantidade em saldo,quantidade
+SaudeMaisERP,estoque,Valor de custo em estoque,valor_total_custo
+SaudeMaisERP,estoque,Unidade de negócio,unidade
+SaudeMaisERP,vendas,Identificador do produto (EAN),ean
+SaudeMaisERP,vendas,Nome/apresentação,descricao_produto
+SaudeMaisERP,vendas,Unidades na venda,quantidade
+SaudeMaisERP,vendas,Total bruto dos itens,valor_total_bruto
+SaudeMaisERP,vendas,Total líquido dos itens,valor_total_liquido
+SaudeMaisERP,vendas,Unidade de negócio,unidade
+MedGestor,estoque,Código universal,ean
+MedGestor,estoque,Descrição resumida,descricao_produto
+MedGestor,estoque,Classificação do produto,grupo
+MedGestor,estoque,Estoque disponível,quantidade
+MedGestor,estoque,Custo total atual,valor_total_custo
+MedGestor,estoque,Loja emitente,unidade
+MedGestor,vendas,Código universal EAN,ean
+MedGestor,vendas,Descrição resumida,descricao_produto
+MedGestor,vendas,Quantidade comercializada,quantidade
+MedGestor,vendas,Bruto dos produtos,valor_total_bruto
+MedGestor,vendas,Líquido dos produtos,valor_total_liquido
+MedGestor,vendas,Loja emitente,unidade
+FarmaciaDigital,estoque,Referência GTIN,ean
+FarmaciaDigital,estoque,Produto / apresentação,descricao_produto
+FarmaciaDigital,estoque,Linha terapêutica,grupo
+FarmaciaDigital,estoque,Unidades disponíveis,quantidade
+FarmaciaDigital,estoque,Custo dos itens em saldo,valor_total_custo
+FarmaciaDigital,estoque,Filial de atendimento,unidade
+FarmaciaDigital,vendas,Referência GTIN produto,ean
+FarmaciaDigital,vendas,Produto / apresentação,descricao_produto
+FarmaciaDigital,vendas,Unidades na saída,quantidade
+FarmaciaDigital,vendas,Total dos itens antes de desconto,valor_total_bruto
+FarmaciaDigital,vendas,Total dos itens após desconto,valor_total_liquido
+FarmaciaDigital,vendas,Filial de atendimento,unidade
+VidaFarma,estoque,EAN-13,ean
+VidaFarma,estoque,Nome fantasia do item,descricao_produto
+VidaFarma,estoque,Seção de produtos,grupo
+VidaFarma,estoque,Saldo contado,quantidade
+VidaFarma,estoque,Montante de aquisição,valor_total_custo
+VidaFarma,estoque,Unidade cadastrada,unidade
+VidaFarma,vendas,GTIN-13,ean
+VidaFarma,vendas,Nome fantasia do item,descricao_produto
+VidaFarma,vendas,Quantidade no cupom,quantidade
+VidaFarma,vendas,Valor total sem deduções,valor_total_bruto
+VidaFarma,vendas,Valor total após deduções,valor_total_liquido
+VidaFarma,vendas,Unidade cadastrada,unidade

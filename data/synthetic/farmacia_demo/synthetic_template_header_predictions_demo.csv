@@ -1,0 +1,25 @@
+﻿report_type,source_column,canonical_field_expected,prediction_top1,exact_header_seen_in_training,top1_correct,predictions_top3_json,top3_correct,top1_confidence_uncalibrated
+estoque,EAN,ean,ean,False,True,"[""ean"", ""quantidade"", ""unidade""]",True,0.283949
+estoque,Produto,descricao_produto,descricao_produto,False,True,"[""descricao_produto"", ""laboratorio"", ""quantidade""]",True,0.165109
+estoque,Categoria,grupo,subgrupo,True,False,"[""subgrupo"", ""grupo"", ""quantidade""]",True,0.22802
+estoque,Departamento,subgrupo,subgrupo,True,True,"[""subgrupo"", ""grupo"", ""unidade""]",True,0.131642
+estoque,Laboratório,laboratorio,laboratorio,False,True,"[""laboratorio"", ""grupo"", ""subgrupo""]",True,0.18147
+estoque,Estoque,quantidade,quantidade,False,True,"[""quantidade"", ""unidade"", ""giro_mensal""]",True,0.133296
+estoque,Giro Mensal,giro_mensal,giro_mensal,True,True,"[""giro_mensal"", ""quantidade"", ""ean""]",True,0.567416
+estoque,Custo,valor_total_custo,valor_total_custo,False,True,"[""valor_total_custo"", ""custo_medio"", ""quantidade""]",True,0.395708
+estoque,Custo Médio,custo_medio,custo_medio,True,True,"[""custo_medio"", ""valor_total_custo"", ""giro_mensal""]",True,0.642237
+estoque,Venda,valor_total_liquido,unidade,False,False,"[""unidade"", ""quantidade"", ""grupo""]",False,0.129278
+vendas,Período,mes,mes,False,True,"[""mes"", ""desconto_maximo"", ""subgrupo""]",True,0.3169
+vendas,filial,filial,filial,False,True,"[""filial"", ""grupo"", ""subgrupo""]",True,0.205397
+vendas,EAN,ean,ean,False,True,"[""ean"", ""mes"", ""valor_total_bruto""]",True,0.269585
+vendas,Produto,descricao_produto,descricao_produto,False,True,"[""descricao_produto"", ""laboratorio"", ""valor_total_bruto""]",True,0.163857
+vendas,Categoria,grupo,subgrupo,False,False,"[""subgrupo"", ""grupo"", ""mes""]",True,0.230742
+vendas,Departamento,subgrupo,subgrupo,False,True,"[""subgrupo"", ""grupo"", ""desconto_padrao""]",True,0.124932
+vendas,Laboratório,laboratorio,laboratorio,False,True,"[""laboratorio"", ""mes"", ""subgrupo""]",True,0.174533
+vendas,Quantidade Vendida,quantidade,quantidade,False,True,"[""quantidade"", ""unidade"", ""filial""]",True,0.265607
+vendas,Valor Vendido,valor_total_liquido,valor_total_bruto,True,False,"[""valor_total_bruto"", ""valor_total_liquido"", ""valor_total_custo""]",True,0.20859
+vendas,Custo,valor_total_custo,valor_total_custo,False,True,"[""valor_total_custo"", ""custo_medio"", ""mes""]",True,0.428234
+vendas,Lucro Bruto,lucro_bruto,lucro_bruto,True,True,"[""lucro_bruto"", ""valor_total_bruto"", ""subgrupo""]",True,0.557108
+vendas,Desconto Máximo,desconto_maximo,desconto_maximo,False,True,"[""desconto_maximo"", ""desconto_padrao"", ""desconto_preferencial""]",True,0.500978
+vendas,Desconto Padrão,desconto_padrao,desconto_padrao,True,True,"[""desconto_padrao"", ""desconto_preferencial"", ""desconto_maximo""]",True,0.55357
+vendas,Desconto Preferencial,desconto_preferencial,desconto_preferencial,True,True,"[""desconto_preferencial"", ""desconto_padrao"", ""mes""]",True,0.458344

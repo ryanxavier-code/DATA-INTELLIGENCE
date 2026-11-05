@@ -1,0 +1,319 @@
+﻿example_id,source_profile,report_type,source_column,canonical_field_expected,prediction_top1,top1_confidence,predictions_top3_json,top1_correct,top3_correct,fold
+FarmaNuvem__estoque__Código de barras,FarmaNuvem,estoque,Código de barras,ean,ean,0.222332,"[""ean"", ""filial"", ""unidade""]",True,True,2
+FarmaNuvem__estoque__Item comercial,FarmaNuvem,estoque,Item comercial,descricao_produto,descricao_produto,0.138106,"[""descricao_produto"", ""grupo"", ""ean""]",True,True,2
+FarmaNuvem__estoque__Seção comercial,FarmaNuvem,estoque,Seção comercial,grupo,grupo,0.172031,"[""grupo"", ""descricao_produto"", ""subgrupo""]",True,True,2
+FarmaNuvem__estoque__Departamento,FarmaNuvem,estoque,Departamento,subgrupo,grupo,0.087501,"[""grupo"", ""descricao_produto"", ""valor_total_custo""]",False,False,2
+FarmaNuvem__estoque__Fabricante cadastrado,FarmaNuvem,estoque,Fabricante cadastrado,laboratorio,laboratorio,0.343021,"[""laboratorio"", ""unidade"", ""ean""]",True,True,2
+FarmaNuvem__estoque__Saldo do produto,FarmaNuvem,estoque,Saldo do produto,quantidade,quantidade,0.134505,"[""quantidade"", ""laboratorio"", ""ean""]",True,True,2
+FarmaNuvem__estoque__Rotação mensal,FarmaNuvem,estoque,Rotação mensal,giro_mensal,giro_mensal,0.33158,"[""giro_mensal"", ""descricao_produto"", ""unidade""]",True,True,2
+FarmaNuvem__estoque__Montante de aquisição,FarmaNuvem,estoque,Montante de aquisição,valor_total_custo,valor_total_custo,0.203721,"[""valor_total_custo"", ""quantidade"", ""valor_total_liquido""]",True,True,2
+FarmaNuvem__estoque__Valor médio de compra,FarmaNuvem,estoque,Valor médio de compra,custo_medio,custo_medio,0.237336,"[""custo_medio"", ""giro_mensal"", ""valor_total_liquido""]",True,True,2
+FarmaNuvem__estoque__Receita líquida dos itens,FarmaNuvem,estoque,Receita líquida dos itens,valor_total_liquido,valor_total_liquido,0.412416,"[""valor_total_liquido"", ""quantidade"", ""valor_total_custo""]",True,True,2
+FarmaNuvem__estoque__Estabelecimento comercial,FarmaNuvem,estoque,Estabelecimento comercial,unidade,grupo,0.099834,"[""grupo"", ""unidade"", ""descricao_produto""]",False,True,2
+RedeCuidar__vendas__Mês de faturamento,RedeCuidar,vendas,Mês de faturamento,mes,filial,0.10321,"[""filial"", ""valor_total_bruto"", ""mes""]",False,True,2
+RedeCuidar__vendas__Identificador numérico da loja,RedeCuidar,vendas,Identificador numérico da loja,filial,filial,0.308971,"[""filial"", ""unidade"", ""ean""]",True,True,2
+RedeCuidar__vendas__Item GTIN,RedeCuidar,vendas,Item GTIN,ean,ean,0.34536,"[""ean"", ""descricao_produto"", ""laboratorio""]",True,True,2
+RedeCuidar__vendas__Produto/descrição,RedeCuidar,vendas,Produto/descrição,descricao_produto,descricao_produto,0.264881,"[""descricao_produto"", ""laboratorio"", ""grupo""]",True,True,2
+RedeCuidar__vendas__Família,RedeCuidar,vendas,Família,grupo,grupo,0.195998,"[""grupo"", ""filial"", ""subgrupo""]",True,True,2
+RedeCuidar__vendas__Divisão de produto,RedeCuidar,vendas,Divisão de produto,subgrupo,grupo,0.154999,"[""grupo"", ""laboratorio"", ""subgrupo""]",False,True,2
+RedeCuidar__vendas__Indústria responsável,RedeCuidar,vendas,Indústria responsável,laboratorio,laboratorio,0.183868,"[""laboratorio"", ""filial"", ""subgrupo""]",True,True,2
+RedeCuidar__vendas__Existência atual,RedeCuidar,vendas,Existência atual,quantidade,mes,0.105304,"[""mes"", ""quantidade"", ""ean""]",False,True,2
+RedeCuidar__vendas__Venda antes de descontos,RedeCuidar,vendas,Venda antes de descontos,valor_total_bruto,valor_total_bruto,0.11913,"[""valor_total_bruto"", ""desconto_preferencial"", ""desconto_padrao""]",True,True,2
+RedeCuidar__vendas__Total comercial líquido,RedeCuidar,vendas,Total comercial líquido,valor_total_liquido,valor_total_liquido,0.342714,"[""valor_total_liquido"", ""valor_total_bruto"", ""mes""]",True,True,2
+RedeCuidar__vendas__Total de custo,RedeCuidar,vendas,Total de custo,valor_total_custo,valor_total_custo,0.434221,"[""valor_total_custo"", ""valor_total_bruto"", ""custo_medio""]",True,True,2
+RedeCuidar__vendas__Resultado financeiro bruto,RedeCuidar,vendas,Resultado financeiro bruto,lucro_bruto,lucro_bruto,0.318734,"[""lucro_bruto"", ""valor_total_bruto"", ""valor_total_liquido""]",True,True,2
+RedeCuidar__vendas__Maior redução autorizada,RedeCuidar,vendas,Maior redução autorizada,desconto_maximo,desconto_maximo,0.151482,"[""desconto_maximo"", ""desconto_preferencial"", ""laboratorio""]",True,True,2
+RedeCuidar__vendas__Desconto base da venda,RedeCuidar,vendas,Desconto base da venda,desconto_padrao,desconto_padrao,0.202457,"[""desconto_padrao"", ""desconto_preferencial"", ""desconto_maximo""]",True,True,2
+RedeCuidar__vendas__Benefício comercial especial,RedeCuidar,vendas,Benefício comercial especial,desconto_preferencial,desconto_preferencial,0.146423,"[""desconto_preferencial"", ""mes"", ""grupo""]",True,True,2
+RedeCuidar__vendas__Unidade de negócio,RedeCuidar,vendas,Unidade de negócio,unidade,unidade,0.158364,"[""unidade"", ""quantidade"", ""filial""]",True,True,2
+PontoSaude__estoque__GTIN-13,PontoSaude,estoque,GTIN-13,ean,ean,0.225195,"[""ean"", ""quantidade"", ""unidade""]",True,True,4
+PontoSaude__estoque__Item do catálogo,PontoSaude,estoque,Item do catálogo,descricao_produto,descricao_produto,0.121647,"[""descricao_produto"", ""subgrupo"", ""ean""]",True,True,4
+PontoSaude__estoque__Setor,PontoSaude,estoque,Setor,grupo,quantidade,0.096409,"[""quantidade"", ""grupo"", ""unidade""]",False,True,4
+PontoSaude__estoque__Categoria filha,PontoSaude,estoque,Categoria filha,subgrupo,subgrupo,0.195883,"[""subgrupo"", ""grupo"", ""laboratorio""]",True,True,4
+PontoSaude__estoque__Marca registrada do produto,PontoSaude,estoque,Marca registrada do produto,laboratorio,descricao_produto,0.107423,"[""descricao_produto"", ""quantidade"", ""laboratorio""]",False,True,4
+PontoSaude__estoque__Quantidade em mãos,PontoSaude,estoque,Quantidade em mãos,quantidade,quantidade,0.242697,"[""quantidade"", ""unidade"", ""ean""]",True,True,4
+PontoSaude__estoque__Unidades movimentadas no mês,PontoSaude,estoque,Unidades movimentadas no mês,giro_mensal,giro_mensal,0.12487,"[""giro_mensal"", ""quantidade"", ""unidade""]",True,True,4
+PontoSaude__estoque__Custo contabilizado,PontoSaude,estoque,Custo contabilizado,valor_total_custo,valor_total_custo,0.206169,"[""valor_total_custo"", ""custo_medio"", ""valor_total_liquido""]",True,True,4
+PontoSaude__estoque__Valor médio de custo,PontoSaude,estoque,Valor médio de custo,custo_medio,custo_medio,0.486967,"[""custo_medio"", ""valor_total_custo"", ""giro_mensal""]",True,True,4
+PontoSaude__estoque__Valor Vendido,PontoSaude,estoque,Valor Vendido,valor_total_liquido,valor_total_bruto,0.160879,"[""valor_total_bruto"", ""valor_total_custo"", ""valor_total_liquido""]",False,True,4
+PontoSaude__estoque__Unidade operacional,PontoSaude,estoque,Unidade operacional,unidade,unidade,0.296208,"[""unidade"", ""quantidade"", ""desconto_padrao""]",True,True,4
+PontoSaude__vendas__Competência venda,PontoSaude,vendas,Competência venda,mes,mes,0.352541,"[""mes"", ""filial"", ""ean""]",True,True,4
+PontoSaude__vendas__Unidade numérica de venda,PontoSaude,vendas,Unidade numérica de venda,filial,filial,0.159964,"[""filial"", ""unidade"", ""quantidade""]",True,True,4
+PontoSaude__vendas__GTIN do item,PontoSaude,vendas,GTIN do item,ean,ean,0.288277,"[""ean"", ""descricao_produto"", ""laboratorio""]",True,True,4
+PontoSaude__vendas__Descrição produto,PontoSaude,vendas,Descrição produto,descricao_produto,descricao_produto,0.37511,"[""descricao_produto"", ""valor_total_bruto"", ""subgrupo""]",True,True,4
+PontoSaude__vendas__Categoria de produto,PontoSaude,vendas,Categoria de produto,grupo,subgrupo,0.162882,"[""subgrupo"", ""grupo"", ""descricao_produto""]",False,True,4
+PontoSaude__vendas__Classificação secundária,PontoSaude,vendas,Classificação secundária,subgrupo,subgrupo,0.322793,"[""subgrupo"", ""grupo"", ""filial""]",True,True,4
+PontoSaude__vendas__Marca do produto,PontoSaude,vendas,Marca do produto,laboratorio,descricao_produto,0.120754,"[""descricao_produto"", ""laboratorio"", ""subgrupo""]",False,True,4
+PontoSaude__vendas__Qtd disponível,PontoSaude,vendas,Qtd disponível,quantidade,quantidade,0.124166,"[""quantidade"", ""subgrupo"", ""filial""]",True,True,4
+PontoSaude__vendas__Faturamento sem abatimentos,PontoSaude,vendas,Faturamento sem abatimentos,valor_total_bruto,mes,0.087893,"[""mes"", ""desconto_padrao"", ""desconto_maximo""]",False,False,4
+PontoSaude__vendas__Valor líquido vendido,PontoSaude,vendas,Valor líquido vendido,valor_total_liquido,valor_total_liquido,0.288227,"[""valor_total_liquido"", ""valor_total_bruto"", ""valor_total_custo""]",True,True,4
+PontoSaude__vendas__Valor custo estoque,PontoSaude,vendas,Valor custo estoque,valor_total_custo,valor_total_custo,0.322433,"[""valor_total_custo"", ""custo_medio"", ""valor_total_bruto""]",True,True,4
+PontoSaude__vendas__Valor de lucro antes de despesas,PontoSaude,vendas,Valor de lucro antes de despesas,lucro_bruto,valor_total_bruto,0.149443,"[""valor_total_bruto"", ""lucro_bruto"", ""valor_total_custo""]",False,True,4
+PontoSaude__vendas__Limite de desconto total,PontoSaude,vendas,Limite de desconto total,desconto_maximo,desconto_padrao,0.148386,"[""desconto_padrao"", ""valor_total_bruto"", ""desconto_maximo""]",False,True,4
+PontoSaude__vendas__Percentual de redução padrão,PontoSaude,vendas,Percentual de redução padrão,desconto_padrao,desconto_maximo,0.193591,"[""desconto_maximo"", ""desconto_padrao"", ""desconto_preferencial""]",False,True,4
+PontoSaude__vendas__Desconto para fidelidade,PontoSaude,vendas,Desconto para fidelidade,desconto_preferencial,desconto_padrao,0.134723,"[""desconto_padrao"", ""desconto_preferencial"", ""unidade""]",False,True,4
+PontoSaude__vendas__Identificação da loja,PontoSaude,vendas,Identificação da loja,unidade,filial,0.220119,"[""filial"", ""unidade"", ""subgrupo""]",False,True,4
+Drogaria360__estoque__GTIN cadastrado,Drogaria360,estoque,GTIN cadastrado,ean,ean,0.16326,"[""ean"", ""descricao_produto"", ""laboratorio""]",True,True,1
+Drogaria360__estoque__Denominação,Drogaria360,estoque,Denominação,descricao_produto,unidade,0.103107,"[""unidade"", ""descricao_produto"", ""giro_mensal""]",False,True,1
+Drogaria360__estoque__Classificação,Drogaria360,estoque,Classificação,grupo,subgrupo,0.164136,"[""subgrupo"", ""unidade"", ""grupo""]",False,True,1
+Drogaria360__estoque__Linha específica,Drogaria360,estoque,Linha específica,subgrupo,subgrupo,0.167624,"[""subgrupo"", ""quantidade"", ""unidade""]",True,True,1
+Drogaria360__estoque__Fabricante do item,Drogaria360,estoque,Fabricante do item,laboratorio,laboratorio,0.315821,"[""laboratorio"", ""descricao_produto"", ""ean""]",True,True,1
+Drogaria360__estoque__Quantidade em saldo,Drogaria360,estoque,Quantidade em saldo,quantidade,quantidade,0.481629,"[""quantidade"", ""unidade"", ""giro_mensal""]",True,True,1
+Drogaria360__estoque__Média mensal de unidades,Drogaria360,estoque,Média mensal de unidades,giro_mensal,giro_mensal,0.272672,"[""giro_mensal"", ""custo_medio"", ""quantidade""]",True,True,1
+Drogaria360__estoque__Valor de aquisição total,Drogaria360,estoque,Valor de aquisição total,valor_total_custo,valor_total_custo,0.262588,"[""valor_total_custo"", ""custo_medio"", ""valor_total_liquido""]",True,True,1
+Drogaria360__estoque__Custo ponderado médio,Drogaria360,estoque,Custo ponderado médio,custo_medio,custo_medio,0.452046,"[""custo_medio"", ""valor_total_custo"", ""giro_mensal""]",True,True,1
+Drogaria360__estoque__Receita após abatimentos,Drogaria360,estoque,Receita após abatimentos,valor_total_liquido,valor_total_liquido,0.167586,"[""valor_total_liquido"", ""desconto_maximo"", ""valor_total_bruto""]",True,True,1
+Drogaria360__estoque__Unidade cadastrada,Drogaria360,estoque,Unidade cadastrada,unidade,unidade,0.221428,"[""unidade"", ""quantidade"", ""descricao_produto""]",True,True,1
+Drogaria360__vendas__Competência do relatório,Drogaria360,vendas,Competência do relatório,mes,mes,0.235287,"[""mes"", ""laboratorio"", ""subgrupo""]",True,True,1
+Drogaria360__vendas__Código da filial,Drogaria360,vendas,Código da filial,filial,filial,0.191471,"[""filial"", ""ean"", ""grupo""]",True,True,1
+Drogaria360__vendas__Referência EAN,Drogaria360,vendas,Referência EAN,ean,mes,0.213805,"[""mes"", ""ean"", ""desconto_preferencial""]",False,True,1
+Drogaria360__vendas__Nome produto,Drogaria360,vendas,Nome produto,descricao_produto,descricao_produto,0.155261,"[""descricao_produto"", ""laboratorio"", ""ean""]",True,True,1
+Drogaria360__vendas__Categoria comercial,Drogaria360,vendas,Categoria comercial,grupo,grupo,0.170986,"[""grupo"", ""subgrupo"", ""descricao_produto""]",True,True,1
+Drogaria360__vendas__Classe secundária,Drogaria360,vendas,Classe secundária,subgrupo,subgrupo,0.280866,"[""subgrupo"", ""grupo"", ""mes""]",True,True,1
+Drogaria360__vendas__Fabricante principal,Drogaria360,vendas,Fabricante principal,laboratorio,laboratorio,0.255668,"[""laboratorio"", ""ean"", ""subgrupo""]",True,True,1
+Drogaria360__vendas__Saldo físico,Drogaria360,vendas,Saldo físico,quantidade,quantidade,0.15187,"[""quantidade"", ""valor_total_custo"", ""subgrupo""]",True,True,1
+Drogaria360__vendas__Total comercial bruto,Drogaria360,vendas,Total comercial bruto,valor_total_bruto,valor_total_bruto,0.180009,"[""valor_total_bruto"", ""lucro_bruto"", ""grupo""]",True,True,1
+Drogaria360__vendas__Valor recebido líquido,Drogaria360,vendas,Valor recebido líquido,valor_total_liquido,valor_total_liquido,0.579133,"[""valor_total_liquido"", ""valor_total_bruto"", ""valor_total_custo""]",True,True,1
+Drogaria360__vendas__Investimento total,Drogaria360,vendas,Investimento total,valor_total_custo,valor_total_custo,0.187391,"[""valor_total_custo"", ""valor_total_bruto"", ""desconto_maximo""]",True,True,1
+Drogaria360__vendas__Ganho comercial bruto,Drogaria360,vendas,Ganho comercial bruto,lucro_bruto,lucro_bruto,0.27778,"[""lucro_bruto"", ""valor_total_bruto"", ""grupo""]",True,True,1
+Drogaria360__vendas__Desconto máximo aplicável,Drogaria360,vendas,Desconto máximo aplicável,desconto_maximo,desconto_maximo,0.321587,"[""desconto_maximo"", ""desconto_padrao"", ""desconto_preferencial""]",True,True,1
+Drogaria360__vendas__Percentual padrão aplicado,Drogaria360,vendas,Percentual padrão aplicado,desconto_padrao,desconto_padrao,0.177031,"[""desconto_padrao"", ""desconto_maximo"", ""desconto_preferencial""]",True,True,1
+Drogaria360__vendas__Redução de preço preferencial,Drogaria360,vendas,Redução de preço preferencial,desconto_preferencial,desconto_preferencial,0.247276,"[""desconto_preferencial"", ""mes"", ""ean""]",True,True,1
+Drogaria360__vendas__Loja emitente,Drogaria360,vendas,Loja emitente,unidade,filial,0.152178,"[""filial"", ""unidade"", ""desconto_maximo""]",False,True,1
+PharmaLink__vendas__Período da venda,PharmaLink,vendas,Período da venda,mes,mes,0.249724,"[""mes"", ""filial"", ""desconto_maximo""]",True,True,3
+PharmaLink__vendas__Código interno da loja,PharmaLink,vendas,Código interno da loja,filial,filial,0.173758,"[""filial"", ""unidade"", ""ean""]",True,True,3
+PharmaLink__vendas__Código de barras,PharmaLink,vendas,Código de barras,ean,ean,0.187007,"[""ean"", ""filial"", ""unidade""]",True,True,3
+PharmaLink__vendas__Item comercial,PharmaLink,vendas,Item comercial,descricao_produto,grupo,0.099103,"[""grupo"", ""descricao_produto"", ""lucro_bruto""]",False,True,3
+PharmaLink__vendas__Seção comercial,PharmaLink,vendas,Seção comercial,grupo,grupo,0.135094,"[""grupo"", ""mes"", ""lucro_bruto""]",True,True,3
+PharmaLink__vendas__Família de segundo nível,PharmaLink,vendas,Família de segundo nível,subgrupo,grupo,0.18531,"[""grupo"", ""subgrupo"", ""filial""]",False,True,3
+PharmaLink__vendas__Fabricante cadastrado,PharmaLink,vendas,Fabricante cadastrado,laboratorio,laboratorio,0.301432,"[""laboratorio"", ""descricao_produto"", ""desconto_maximo""]",True,True,3
+PharmaLink__vendas__Saldo do produto,PharmaLink,vendas,Saldo do produto,quantidade,quantidade,0.116221,"[""quantidade"", ""descricao_produto"", ""laboratorio""]",True,True,3
+PharmaLink__vendas__Valor original das vendas,PharmaLink,vendas,Valor original das vendas,valor_total_bruto,valor_total_bruto,0.094666,"[""valor_total_bruto"", ""valor_total_liquido"", ""valor_total_custo""]",True,True,3
+PharmaLink__vendas__Receita líquida dos itens,PharmaLink,vendas,Receita líquida dos itens,valor_total_liquido,valor_total_liquido,0.406556,"[""valor_total_liquido"", ""quantidade"", ""mes""]",True,True,3
+PharmaLink__vendas__Custo do saldo,PharmaLink,vendas,Custo do saldo,valor_total_custo,valor_total_custo,0.175845,"[""valor_total_custo"", ""quantidade"", ""custo_medio""]",True,True,3
+PharmaLink__vendas__Ganho bruto por item,PharmaLink,vendas,Ganho bruto por item,lucro_bruto,lucro_bruto,0.190349,"[""lucro_bruto"", ""valor_total_bruto"", ""ean""]",True,True,3
+PharmaLink__vendas__Maior percentual de desconto,PharmaLink,vendas,Maior percentual de desconto,desconto_maximo,desconto_padrao,0.293527,"[""desconto_padrao"", ""desconto_maximo"", ""desconto_preferencial""]",False,True,3
+PharmaLink__vendas__Taxa regular de desconto,PharmaLink,vendas,Taxa regular de desconto,desconto_padrao,desconto_padrao,0.249547,"[""desconto_padrao"", ""desconto_maximo"", ""desconto_preferencial""]",True,True,3
+PharmaLink__vendas__Redução preferencial,PharmaLink,vendas,Redução preferencial,desconto_preferencial,desconto_preferencial,0.184704,"[""desconto_preferencial"", ""mes"", ""ean""]",True,True,3
+PharmaLink__vendas__Loja,PharmaLink,vendas,Loja,unidade,filial,0.177515,"[""filial"", ""unidade"", ""mes""]",False,True,3
+SaudeMaisERP__estoque__Referência do item,SaudeMaisERP,estoque,Referência do item,ean,desconto_preferencial,0.100434,"[""desconto_preferencial"", ""mes"", ""ean""]",False,True,5
+SaudeMaisERP__estoque__Descrição resumida,SaudeMaisERP,estoque,Descrição resumida,descricao_produto,descricao_produto,0.148191,"[""descricao_produto"", ""giro_mensal"", ""quantidade""]",True,True,5
+SaudeMaisERP__estoque__Família comercial,SaudeMaisERP,estoque,Família comercial,grupo,grupo,0.186723,"[""grupo"", ""subgrupo"", ""descricao_produto""]",True,True,5
+SaudeMaisERP__estoque__Nível de grupo 2,SaudeMaisERP,estoque,Nível de grupo 2,subgrupo,quantidade,0.102336,"[""quantidade"", ""subgrupo"", ""grupo""]",False,True,5
+SaudeMaisERP__estoque__Fornecedor fabricante,SaudeMaisERP,estoque,Fornecedor fabricante,laboratorio,laboratorio,0.298464,"[""laboratorio"", ""grupo"", ""subgrupo""]",True,True,5
+SaudeMaisERP__estoque__Unidades restantes,SaudeMaisERP,estoque,Unidades restantes,quantidade,giro_mensal,0.124547,"[""giro_mensal"", ""unidade"", ""quantidade""]",False,True,5
+SaudeMaisERP__estoque__Giro mensal,SaudeMaisERP,estoque,Giro mensal,giro_mensal,giro_mensal,0.382119,"[""giro_mensal"", ""quantidade"", ""ean""]",True,True,5
+SaudeMaisERP__estoque__Custo dos itens,SaudeMaisERP,estoque,Custo dos itens,valor_total_custo,valor_total_custo,0.208188,"[""valor_total_custo"", ""quantidade"", ""custo_medio""]",True,True,5
+SaudeMaisERP__estoque__Custo por unidade médio,SaudeMaisERP,estoque,Custo por unidade médio,custo_medio,custo_medio,0.322705,"[""custo_medio"", ""giro_mensal"", ""unidade""]",True,True,5
+SaudeMaisERP__estoque__Líquido dos produtos,SaudeMaisERP,estoque,Líquido dos produtos,valor_total_liquido,valor_total_liquido,0.249478,"[""valor_total_liquido"", ""descricao_produto"", ""quantidade""]",True,True,5
+SaudeMaisERP__estoque__Unidade de venda,SaudeMaisERP,estoque,Unidade de venda,unidade,unidade,0.23078,"[""unidade"", ""quantidade"", ""giro_mensal""]",True,True,5
+MedGestor__vendas__Período de referência,MedGestor,vendas,Período de referência,mes,mes,0.347403,"[""mes"", ""desconto_preferencial"", ""ean""]",True,True,4
+MedGestor__vendas__Identificador da loja de venda,MedGestor,vendas,Identificador da loja de venda,filial,filial,0.294576,"[""filial"", ""unidade"", ""ean""]",True,True,4
+MedGestor__vendas__GTIN-13,MedGestor,vendas,GTIN-13,ean,ean,0.195451,"[""ean"", ""mes"", ""valor_total_bruto""]",True,True,4
+MedGestor__vendas__Item do catálogo,MedGestor,vendas,Item do catálogo,descricao_produto,descricao_produto,0.117366,"[""descricao_produto"", ""subgrupo"", ""grupo""]",True,True,4
+MedGestor__vendas__Setor,MedGestor,vendas,Setor,grupo,mes,0.079701,"[""mes"", ""valor_total_bruto"", ""grupo""]",False,True,4
+MedGestor__vendas__Subcategoria,MedGestor,vendas,Subcategoria,subgrupo,subgrupo,0.16369,"[""subgrupo"", ""grupo"", ""mes""]",True,True,4
+MedGestor__vendas__Marca registrada do produto,MedGestor,vendas,Marca registrada do produto,laboratorio,descricao_produto,0.103584,"[""descricao_produto"", ""laboratorio"", ""quantidade""]",False,True,4
+MedGestor__vendas__Quantidade em mãos,MedGestor,vendas,Quantidade em mãos,quantidade,quantidade,0.194861,"[""quantidade"", ""unidade"", ""valor_total_bruto""]",True,True,4
+MedGestor__vendas__Valor total sem deduções,MedGestor,vendas,Valor total sem deduções,valor_total_bruto,valor_total_bruto,0.212374,"[""valor_total_bruto"", ""valor_total_custo"", ""valor_total_liquido""]",True,True,4
+MedGestor__vendas__Valor Vendido,MedGestor,vendas,Valor Vendido,valor_total_liquido,valor_total_bruto,0.26316,"[""valor_total_bruto"", ""valor_total_custo"", ""valor_total_liquido""]",False,True,4
+MedGestor__vendas__Montante em custo,MedGestor,vendas,Montante em custo,valor_total_custo,valor_total_custo,0.237225,"[""valor_total_custo"", ""valor_total_bruto"", ""custo_medio""]",True,True,4
+MedGestor__vendas__Lucro da operação antes de despesas,MedGestor,vendas,Lucro da operação antes de despesas,lucro_bruto,unidade,0.08969,"[""unidade"", ""lucro_bruto"", ""valor_total_bruto""]",False,True,4
+MedGestor__vendas__Limite superior promocional,MedGestor,vendas,Limite superior promocional,desconto_maximo,desconto_maximo,0.119401,"[""desconto_maximo"", ""mes"", ""subgrupo""]",True,True,4
+MedGestor__vendas__Desconto regular,MedGestor,vendas,Desconto regular,desconto_padrao,desconto_padrao,0.274779,"[""desconto_padrao"", ""valor_total_bruto"", ""desconto_maximo""]",True,True,4
+MedGestor__vendas__Desconto para cliente cadastrado,MedGestor,vendas,Desconto para cliente cadastrado,desconto_preferencial,desconto_preferencial,0.142145,"[""desconto_preferencial"", ""desconto_padrao"", ""desconto_maximo""]",True,True,4
+MedGestor__vendas__Centro de operação,MedGestor,vendas,Centro de operação,unidade,unidade,0.130634,"[""unidade"", ""desconto_padrao"", ""mes""]",True,True,4
+FarmaciaDigital__estoque__EAN produto,FarmaciaDigital,estoque,EAN produto,ean,ean,0.156094,"[""ean"", ""descricao_produto"", ""quantidade""]",True,True,5
+FarmaciaDigital__estoque__Descrição mercantil,FarmaciaDigital,estoque,Descrição mercantil,descricao_produto,descricao_produto,0.176317,"[""descricao_produto"", ""subgrupo"", ""laboratorio""]",True,True,5
+FarmaciaDigital__estoque__Divisão,FarmaciaDigital,estoque,Divisão,grupo,subgrupo,0.128966,"[""subgrupo"", ""grupo"", ""quantidade""]",False,True,5
+FarmaciaDigital__estoque__Classificação secundária,FarmaciaDigital,estoque,Classificação secundária,subgrupo,subgrupo,0.29326,"[""subgrupo"", ""grupo"", ""unidade""]",True,True,5
+FarmaciaDigital__estoque__Produtor do item,FarmaciaDigital,estoque,Produtor do item,laboratorio,descricao_produto,0.211066,"[""descricao_produto"", ""laboratorio"", ""quantidade""]",False,True,5
+FarmaciaDigital__estoque__Quantidade registrada,FarmaciaDigital,estoque,Quantidade registrada,quantidade,quantidade,0.23005,"[""quantidade"", ""unidade"", ""laboratorio""]",True,True,5
+FarmaciaDigital__estoque__Giro médio mensal,FarmaciaDigital,estoque,Giro médio mensal,giro_mensal,giro_mensal,0.355808,"[""giro_mensal"", ""custo_medio"", ""quantidade""]",True,True,5
+FarmaciaDigital__estoque__Valor investido,FarmaciaDigital,estoque,Valor investido,valor_total_custo,valor_total_custo,0.173915,"[""valor_total_custo"", ""valor_total_liquido"", ""quantidade""]",True,True,5
+FarmaciaDigital__estoque__Custo médio,FarmaciaDigital,estoque,Custo médio,custo_medio,custo_medio,0.52434,"[""custo_medio"", ""valor_total_custo"", ""giro_mensal""]",True,True,5
+FarmaciaDigital__estoque__Receita final,FarmaciaDigital,estoque,Receita final,valor_total_liquido,valor_total_liquido,0.193898,"[""valor_total_liquido"", ""quantidade"", ""subgrupo""]",True,True,5
+FarmaciaDigital__estoque__Ponto de estoque,FarmaciaDigital,estoque,Ponto de estoque,unidade,unidade,0.138158,"[""unidade"", ""quantidade"", ""giro_mensal""]",True,True,5
+FarmaciaDigital__vendas__Mês de apuração,FarmaciaDigital,vendas,Mês de apuração,mes,mes,0.130416,"[""mes"", ""unidade"", ""giro_mensal""]",True,True,5
+FarmaciaDigital__vendas__Loja responsável pela venda,FarmaciaDigital,vendas,Loja responsável pela venda,filial,laboratorio,0.124359,"[""laboratorio"", ""unidade"", ""filial""]",False,True,5
+FarmaciaDigital__vendas__Identificador GTIN,FarmaciaDigital,vendas,Identificador GTIN,ean,ean,0.191279,"[""ean"", ""filial"", ""grupo""]",True,True,5
+FarmaciaDigital__vendas__Nome de catálogo,FarmaciaDigital,vendas,Nome de catálogo,descricao_produto,descricao_produto,0.168887,"[""descricao_produto"", ""subgrupo"", ""grupo""]",True,True,5
+FarmaciaDigital__vendas__Grupo de mercadorias,FarmaciaDigital,vendas,Grupo de mercadorias,grupo,grupo,0.10218,"[""grupo"", ""subgrupo"", ""filial""]",True,True,5
+FarmaciaDigital__vendas__Categoria complementar,FarmaciaDigital,vendas,Categoria complementar,subgrupo,subgrupo,0.198182,"[""subgrupo"", ""grupo"", ""mes""]",True,True,5
+FarmaciaDigital__vendas__Indústria do produto,FarmaciaDigital,vendas,Indústria do produto,laboratorio,laboratorio,0.162345,"[""laboratorio"", ""descricao_produto"", ""subgrupo""]",True,True,5
+FarmaciaDigital__vendas__Quantidade física,FarmaciaDigital,vendas,Quantidade física,quantidade,quantidade,0.196503,"[""quantidade"", ""filial"", ""unidade""]",True,True,5
+FarmaciaDigital__vendas__Total antes de descontos,FarmaciaDigital,vendas,Total antes de descontos,valor_total_bruto,valor_total_bruto,0.227173,"[""valor_total_bruto"", ""desconto_padrao"", ""desconto_maximo""]",True,True,5
+FarmaciaDigital__vendas__Valor líquido faturado,FarmaciaDigital,vendas,Valor líquido faturado,valor_total_liquido,valor_total_liquido,0.277564,"[""valor_total_liquido"", ""valor_total_bruto"", ""filial""]",True,True,5
+FarmaciaDigital__vendas__Custo contabilizado,FarmaciaDigital,vendas,Custo contabilizado,valor_total_custo,valor_total_custo,0.214476,"[""valor_total_custo"", ""valor_total_bruto"", ""valor_total_liquido""]",True,True,5
+FarmaciaDigital__vendas__Resultado bruto da venda,FarmaciaDigital,vendas,Resultado bruto da venda,lucro_bruto,lucro_bruto,0.308894,"[""lucro_bruto"", ""valor_total_bruto"", ""mes""]",True,True,5
+FarmaciaDigital__vendas__Máximo abatimento permitido,FarmaciaDigital,vendas,Máximo abatimento permitido,desconto_maximo,desconto_maximo,0.297712,"[""desconto_maximo"", ""valor_total_liquido"", ""desconto_preferencial""]",True,True,5
+FarmaciaDigital__vendas__Desconto operacional usual,FarmaciaDigital,vendas,Desconto operacional usual,desconto_padrao,desconto_padrao,0.142442,"[""desconto_padrao"", ""unidade"", ""desconto_maximo""]",True,True,5
+FarmaciaDigital__vendas__Desconto de cliente VIP,FarmaciaDigital,vendas,Desconto de cliente VIP,desconto_preferencial,desconto_preferencial,0.227124,"[""desconto_preferencial"", ""desconto_padrao"", ""desconto_maximo""]",True,True,5
+FarmaciaDigital__vendas__Unidade operacional,FarmaciaDigital,vendas,Unidade operacional,unidade,unidade,0.265522,"[""unidade"", ""filial"", ""quantidade""]",True,True,5
+SistemaFicticio11__estoque__EAN comercial,SistemaFicticio11,estoque,EAN comercial,ean,ean,0.118858,"[""ean"", ""grupo"", ""unidade""]",True,True,3
+SistemaFicticio11__estoque__Nome reduzido,SistemaFicticio11,estoque,Nome reduzido,descricao_produto,descricao_produto,0.123908,"[""descricao_produto"", ""valor_total_liquido"", ""quantidade""]",True,True,3
+SistemaFicticio11__estoque__Segmento mercadológico,SistemaFicticio11,estoque,Segmento mercadológico,grupo,subgrupo,0.114127,"[""subgrupo"", ""grupo"", ""descricao_produto""]",False,True,3
+SistemaFicticio11__estoque__Classe secundária,SistemaFicticio11,estoque,Classe secundária,subgrupo,subgrupo,0.279759,"[""subgrupo"", ""grupo"", ""quantidade""]",True,True,3
+SistemaFicticio11__estoque__Fornecedor principal,SistemaFicticio11,estoque,Fornecedor principal,laboratorio,laboratorio,0.13493,"[""laboratorio"", ""ean"", ""grupo""]",True,True,3
+SistemaFicticio11__estoque__Unidades no estoque,SistemaFicticio11,estoque,Unidades no estoque,quantidade,unidade,0.17721,"[""unidade"", ""quantidade"", ""giro_mensal""]",False,True,3
+SistemaFicticio11__estoque__Rotatividade mensal,SistemaFicticio11,estoque,Rotatividade mensal,giro_mensal,giro_mensal,0.368781,"[""giro_mensal"", ""quantidade"", ""unidade""]",True,True,3
+SistemaFicticio11__estoque__Montante de custo total,SistemaFicticio11,estoque,Montante de custo total,valor_total_custo,valor_total_custo,0.390982,"[""valor_total_custo"", ""valor_total_bruto"", ""custo_medio""]",True,True,3
+SistemaFicticio11__estoque__Aquisição média unitária,SistemaFicticio11,estoque,Aquisição média unitária,custo_medio,custo_medio,0.137217,"[""custo_medio"", ""valor_total_custo"", ""giro_mensal""]",True,True,3
+SistemaFicticio11__estoque__Montante após abatimento,SistemaFicticio11,estoque,Montante após abatimento,valor_total_liquido,valor_total_custo,0.103688,"[""valor_total_custo"", ""desconto_maximo"", ""valor_total_bruto""]",False,False,3
+SistemaFicticio11__estoque__Local de operação,SistemaFicticio11,estoque,Local de operação,unidade,unidade,0.223133,"[""unidade"", ""grupo"", ""subgrupo""]",True,True,3
+SistemaFicticio11__vendas__Mês comercial,SistemaFicticio11,vendas,Mês comercial,mes,mes,0.198172,"[""mes"", ""grupo"", ""lucro_bruto""]",True,True,3
+SistemaFicticio11__vendas__Código da unidade emissora,SistemaFicticio11,vendas,Código da unidade emissora,filial,unidade,0.202134,"[""unidade"", ""filial"", ""quantidade""]",False,True,3
+SistemaFicticio11__vendas__Código GTIN,SistemaFicticio11,vendas,Código GTIN,ean,ean,0.312687,"[""ean"", ""filial"", ""unidade""]",True,True,3
+SistemaFicticio11__vendas__Apresentação comercial,SistemaFicticio11,vendas,Apresentação comercial,descricao_produto,grupo,0.091681,"[""grupo"", ""mes"", ""lucro_bruto""]",False,False,3
+SistemaFicticio11__vendas__Tipo de produto,SistemaFicticio11,vendas,Tipo de produto,grupo,descricao_produto,0.116923,"[""descricao_produto"", ""laboratorio"", ""subgrupo""]",False,False,3
+SistemaFicticio11__vendas__Segmento de catálogo,SistemaFicticio11,vendas,Segmento de catálogo,subgrupo,subgrupo,0.128142,"[""subgrupo"", ""descricao_produto"", ""grupo""]",True,True,3
+SistemaFicticio11__vendas__Laboratório responsável,SistemaFicticio11,vendas,Laboratório responsável,laboratorio,laboratorio,0.157538,"[""laboratorio"", ""filial"", ""mes""]",True,True,3
+SistemaFicticio11__vendas__Saldo disponível,SistemaFicticio11,vendas,Saldo disponível,quantidade,quantidade,0.207233,"[""quantidade"", ""subgrupo"", ""filial""]",True,True,3
+SistemaFicticio11__vendas__Bruto dos produtos,SistemaFicticio11,vendas,Bruto dos produtos,valor_total_bruto,valor_total_bruto,0.179172,"[""valor_total_bruto"", ""lucro_bruto"", ""descricao_produto""]",True,True,3
+SistemaFicticio11__vendas__Líquido da operação,SistemaFicticio11,vendas,Líquido da operação,valor_total_liquido,valor_total_liquido,0.21427,"[""valor_total_liquido"", ""unidade"", ""mes""]",True,True,3
+SistemaFicticio11__vendas__Valor de aquisição total,SistemaFicticio11,vendas,Valor de aquisição total,valor_total_custo,valor_total_custo,0.252991,"[""valor_total_custo"", ""valor_total_bruto"", ""valor_total_liquido""]",True,True,3
+SistemaFicticio11__vendas__Valor bruto de ganho,SistemaFicticio11,vendas,Valor bruto de ganho,lucro_bruto,lucro_bruto,0.237099,"[""lucro_bruto"", ""valor_total_bruto"", ""valor_total_custo""]",True,True,3
+SistemaFicticio11__vendas__Percentual máximo de redução,SistemaFicticio11,vendas,Percentual máximo de redução,desconto_maximo,desconto_maximo,0.408908,"[""desconto_maximo"", ""desconto_padrao"", ""desconto_preferencial""]",True,True,3
+SistemaFicticio11__vendas__Abatimento de rotina,SistemaFicticio11,vendas,Abatimento de rotina,desconto_padrao,desconto_maximo,0.140728,"[""desconto_maximo"", ""desconto_preferencial"", ""desconto_padrao""]",False,True,3
+SistemaFicticio11__vendas__Percentual de desconto fidelidade,SistemaFicticio11,vendas,Percentual de desconto fidelidade,desconto_preferencial,desconto_padrao,0.233541,"[""desconto_padrao"", ""desconto_preferencial"", ""desconto_maximo""]",False,True,3
+SistemaFicticio11__vendas__Unidade cadastrada,SistemaFicticio11,vendas,Unidade cadastrada,unidade,unidade,0.191367,"[""unidade"", ""quantidade"", ""descricao_produto""]",True,True,3
+SistemaFicticio12__vendas__Referência mensal,SistemaFicticio12,vendas,Referência mensal,mes,mes,0.206288,"[""mes"", ""giro_mensal"", ""desconto_preferencial""]",True,True,5
+SistemaFicticio12__vendas__Número da filial,SistemaFicticio12,vendas,Número da filial,filial,filial,0.24538,"[""filial"", ""grupo"", ""subgrupo""]",True,True,5
+SistemaFicticio12__vendas__Referência do item,SistemaFicticio12,vendas,Referência do item,ean,mes,0.157841,"[""mes"", ""desconto_preferencial"", ""ean""]",False,True,5
+SistemaFicticio12__vendas__Descrição resumida,SistemaFicticio12,vendas,Descrição resumida,descricao_produto,descricao_produto,0.140048,"[""descricao_produto"", ""desconto_padrao"", ""lucro_bruto""]",True,True,5
+SistemaFicticio12__vendas__Família comercial,SistemaFicticio12,vendas,Família comercial,grupo,grupo,0.173417,"[""grupo"", ""mes"", ""subgrupo""]",True,True,5
+SistemaFicticio12__vendas__Tipo secundário,SistemaFicticio12,vendas,Tipo secundário,subgrupo,subgrupo,0.14155,"[""subgrupo"", ""grupo"", ""mes""]",True,True,5
+SistemaFicticio12__vendas__Fornecedor fabricante,SistemaFicticio12,vendas,Fornecedor fabricante,laboratorio,laboratorio,0.296569,"[""laboratorio"", ""filial"", ""grupo""]",True,True,5
+SistemaFicticio12__vendas__Unidades restantes,SistemaFicticio12,vendas,Unidades restantes,quantidade,unidade,0.111582,"[""unidade"", ""quantidade"", ""giro_mensal""]",False,True,5
+SistemaFicticio12__vendas__Valor vendido bruto,SistemaFicticio12,vendas,Valor vendido bruto,valor_total_bruto,valor_total_bruto,0.264187,"[""valor_total_bruto"", ""lucro_bruto"", ""valor_total_liquido""]",True,True,5
+SistemaFicticio12__vendas__Líquido dos produtos,SistemaFicticio12,vendas,Líquido dos produtos,valor_total_liquido,valor_total_liquido,0.249216,"[""valor_total_liquido"", ""valor_total_bruto"", ""descricao_produto""]",True,True,5
+SistemaFicticio12__vendas__Total de aquisição,SistemaFicticio12,vendas,Total de aquisição,valor_total_custo,valor_total_custo,0.210674,"[""valor_total_custo"", ""valor_total_bruto"", ""valor_total_liquido""]",True,True,5
+SistemaFicticio12__vendas__Margem bruta em valor,SistemaFicticio12,vendas,Margem bruta em valor,lucro_bruto,lucro_bruto,0.170675,"[""lucro_bruto"", ""valor_total_bruto"", ""laboratorio""]",True,True,5
+SistemaFicticio12__vendas__Desconto máximo da loja,SistemaFicticio12,vendas,Desconto máximo da loja,desconto_maximo,desconto_maximo,0.258461,"[""desconto_maximo"", ""desconto_padrao"", ""filial""]",True,True,5
+SistemaFicticio12__vendas__Abatimento padrão da loja,SistemaFicticio12,vendas,Abatimento padrão da loja,desconto_padrao,desconto_padrao,0.149058,"[""desconto_padrao"", ""filial"", ""unidade""]",True,True,5
+SistemaFicticio12__vendas__Percentual de benefício especial,SistemaFicticio12,vendas,Percentual de benefício especial,desconto_preferencial,desconto_preferencial,0.236026,"[""desconto_preferencial"", ""desconto_maximo"", ""desconto_padrao""]",True,True,5
+SistemaFicticio12__vendas__Código da unidade,SistemaFicticio12,vendas,Código da unidade,unidade,filial,0.258637,"[""filial"", ""unidade"", ""ean""]",False,True,5
+SistemaFicticio13__estoque__Código global,SistemaFicticio13,estoque,Código global,ean,ean,0.199192,"[""ean"", ""filial"", ""unidade""]",True,True,1
+SistemaFicticio13__estoque__Medicamento,SistemaFicticio13,estoque,Medicamento,descricao_produto,custo_medio,0.132834,"[""custo_medio"", ""descricao_produto"", ""giro_mensal""]",False,True,1
+SistemaFicticio13__estoque__Segmento,SistemaFicticio13,estoque,Segmento,grupo,grupo,0.140077,"[""grupo"", ""subgrupo"", ""giro_mensal""]",True,True,1
+SistemaFicticio13__estoque__Classificação detalhada,SistemaFicticio13,estoque,Classificação detalhada,subgrupo,subgrupo,0.159449,"[""subgrupo"", ""unidade"", ""grupo""]",True,True,1
+SistemaFicticio13__estoque__Nome do fabricante,SistemaFicticio13,estoque,Nome do fabricante,laboratorio,laboratorio,0.285675,"[""laboratorio"", ""descricao_produto"", ""quantidade""]",True,True,1
+SistemaFicticio13__estoque__Itens em estoque,SistemaFicticio13,estoque,Itens em estoque,quantidade,quantidade,0.143731,"[""quantidade"", ""giro_mensal"", ""ean""]",True,True,1
+SistemaFicticio13__estoque__Saída mensal média,SistemaFicticio13,estoque,Saída mensal média,giro_mensal,giro_mensal,0.354584,"[""giro_mensal"", ""custo_medio"", ""mes""]",True,True,1
+SistemaFicticio13__estoque__Custo acumulado,SistemaFicticio13,estoque,Custo acumulado,valor_total_custo,valor_total_custo,0.278779,"[""valor_total_custo"", ""custo_medio"", ""quantidade""]",True,True,1
+SistemaFicticio13__estoque__Valor unitário médio de custo,SistemaFicticio13,estoque,Valor unitário médio de custo,custo_medio,custo_medio,0.471259,"[""custo_medio"", ""valor_total_custo"", ""giro_mensal""]",True,True,1
+SistemaFicticio13__estoque__Total líquido comercializado,SistemaFicticio13,estoque,Total líquido comercializado,valor_total_liquido,valor_total_liquido,0.327805,"[""valor_total_liquido"", ""valor_total_custo"", ""grupo""]",True,True,1
+SistemaFicticio13__estoque__Farmácia,SistemaFicticio13,estoque,Farmácia,unidade,grupo,0.086899,"[""grupo"", ""quantidade"", ""unidade""]",False,True,1
+SistemaFicticio14__vendas__Data-base mensal,SistemaFicticio14,vendas,Data-base mensal,mes,giro_mensal,0.268246,"[""giro_mensal"", ""mes"", ""desconto_padrao""]",False,True,4
+SistemaFicticio14__vendas__Loja de faturamento,SistemaFicticio14,vendas,Loja de faturamento,filial,mes,0.111524,"[""mes"", ""unidade"", ""filial""]",False,True,4
+SistemaFicticio14__vendas__EAN produto,SistemaFicticio14,vendas,EAN produto,ean,ean,0.139177,"[""ean"", ""descricao_produto"", ""valor_total_bruto""]",True,True,4
+SistemaFicticio14__vendas__Descrição mercantil,SistemaFicticio14,vendas,Descrição mercantil,descricao_produto,descricao_produto,0.216945,"[""descricao_produto"", ""subgrupo"", ""grupo""]",True,True,4
+SistemaFicticio14__vendas__Divisão,SistemaFicticio14,vendas,Divisão,grupo,grupo,0.105468,"[""grupo"", ""subgrupo"", ""mes""]",True,True,4
+SistemaFicticio14__vendas__Subdivisão comercial,SistemaFicticio14,vendas,Subdivisão comercial,subgrupo,grupo,0.134349,"[""grupo"", ""mes"", ""subgrupo""]",False,True,4
+SistemaFicticio14__vendas__Produtor do item,SistemaFicticio14,vendas,Produtor do item,laboratorio,descricao_produto,0.16893,"[""descricao_produto"", ""laboratorio"", ""ean""]",False,True,4
+SistemaFicticio14__vendas__Quantidade registrada,SistemaFicticio14,vendas,Quantidade registrada,quantidade,quantidade,0.173509,"[""quantidade"", ""unidade"", ""subgrupo""]",True,True,4
+SistemaFicticio14__vendas__Total bruto dos itens,SistemaFicticio14,vendas,Total bruto dos itens,valor_total_bruto,valor_total_bruto,0.222636,"[""valor_total_bruto"", ""lucro_bruto"", ""valor_total_custo""]",True,True,4
+SistemaFicticio14__vendas__Receita final,SistemaFicticio14,vendas,Receita final,valor_total_liquido,valor_total_liquido,0.169168,"[""valor_total_liquido"", ""filial"", ""subgrupo""]",True,True,4
+SistemaFicticio14__vendas__Custo do estoque,SistemaFicticio14,vendas,Custo do estoque,valor_total_custo,valor_total_custo,0.263002,"[""valor_total_custo"", ""custo_medio"", ""quantidade""]",True,True,4
+SistemaFicticio14__vendas__Margem financeira bruta,SistemaFicticio14,vendas,Margem financeira bruta,lucro_bruto,lucro_bruto,0.215479,"[""lucro_bruto"", ""valor_total_bruto"", ""subgrupo""]",True,True,4
+SistemaFicticio14__vendas__Abatimento máximo autorizado,SistemaFicticio14,vendas,Abatimento máximo autorizado,desconto_maximo,desconto_maximo,0.348322,"[""desconto_maximo"", ""desconto_padrao"", ""valor_total_liquido""]",True,True,4
+SistemaFicticio14__vendas__Percentual habitual de desconto,SistemaFicticio14,vendas,Percentual habitual de desconto,desconto_padrao,desconto_padrao,0.228147,"[""desconto_padrao"", ""desconto_maximo"", ""desconto_preferencial""]",True,True,4
+SistemaFicticio14__vendas__Desconto de convênio,SistemaFicticio14,vendas,Desconto de convênio,desconto_preferencial,desconto_padrao,0.280061,"[""desconto_padrao"", ""valor_total_bruto"", ""desconto_maximo""]",False,False,4
+SistemaFicticio14__vendas__Ponto de venda,SistemaFicticio14,vendas,Ponto de venda,unidade,unidade,0.109285,"[""unidade"", ""desconto_padrao"", ""filial""]",True,True,4
+SistemaFicticio15__estoque__Barcode,SistemaFicticio15,estoque,Barcode,ean,ean,0.111019,"[""ean"", ""unidade"", ""grupo""]",True,True,2
+SistemaFicticio15__estoque__Produto cadastrado,SistemaFicticio15,estoque,Produto cadastrado,descricao_produto,laboratorio,0.146837,"[""laboratorio"", ""ean"", ""unidade""]",False,False,2
+SistemaFicticio15__estoque__Agrupador,SistemaFicticio15,estoque,Agrupador,grupo,grupo,0.089247,"[""grupo"", ""ean"", ""quantidade""]",True,True,2
+SistemaFicticio15__estoque__Categoria complementar,SistemaFicticio15,estoque,Categoria complementar,subgrupo,subgrupo,0.190394,"[""subgrupo"", ""grupo"", ""descricao_produto""]",True,True,2
+SistemaFicticio15__estoque__Origem laboratorial,SistemaFicticio15,estoque,Origem laboratorial,laboratorio,laboratorio,0.085883,"[""laboratorio"", ""grupo"", ""unidade""]",True,True,2
+SistemaFicticio15__estoque__Estoque atual,SistemaFicticio15,estoque,Estoque atual,quantidade,quantidade,0.109456,"[""quantidade"", ""valor_total_custo"", ""giro_mensal""]",True,True,2
+SistemaFicticio15__estoque__Saídas por mês,SistemaFicticio15,estoque,Saídas por mês,giro_mensal,giro_mensal,0.112196,"[""giro_mensal"", ""quantidade"", ""grupo""]",True,True,2
+SistemaFicticio15__estoque__Valor de custo agregado,SistemaFicticio15,estoque,Valor de custo agregado,valor_total_custo,valor_total_custo,0.29016,"[""valor_total_custo"", ""custo_medio"", ""valor_total_liquido""]",True,True,2
+SistemaFicticio15__estoque__Custo médio atual,SistemaFicticio15,estoque,Custo médio atual,custo_medio,custo_medio,0.343744,"[""custo_medio"", ""valor_total_custo"", ""giro_mensal""]",True,True,2
+SistemaFicticio15__estoque__Total recebido,SistemaFicticio15,estoque,Total recebido,valor_total_liquido,valor_total_liquido,0.151852,"[""valor_total_liquido"", ""valor_total_custo"", ""valor_total_bruto""]",True,True,2
+SistemaFicticio15__estoque__Unidade de negócio,SistemaFicticio15,estoque,Unidade de negócio,unidade,unidade,0.177225,"[""unidade"", ""quantidade"", ""giro_mensal""]",True,True,2
+SistemaFicticio15__vendas__Mês da venda,SistemaFicticio15,vendas,Mês da venda,mes,mes,0.167502,"[""mes"", ""filial"", ""lucro_bruto""]",True,True,2
+SistemaFicticio15__vendas__Identificador do ponto comercial,SistemaFicticio15,vendas,Identificador do ponto comercial,filial,ean,0.093831,"[""ean"", ""grupo"", ""filial""]",False,True,2
+SistemaFicticio15__vendas__EAN principal,SistemaFicticio15,vendas,EAN principal,ean,ean,0.119668,"[""ean"", ""laboratorio"", ""mes""]",True,True,2
+SistemaFicticio15__vendas__Produto da venda,SistemaFicticio15,vendas,Produto da venda,descricao_produto,laboratorio,0.110142,"[""laboratorio"", ""filial"", ""valor_total_bruto""]",False,False,2
+SistemaFicticio15__vendas__Classe do item,SistemaFicticio15,vendas,Classe do item,grupo,subgrupo,0.110258,"[""subgrupo"", ""descricao_produto"", ""ean""]",False,False,2
+SistemaFicticio15__vendas__Subgrupo mercantil,SistemaFicticio15,vendas,Subgrupo mercantil,subgrupo,descricao_produto,0.092403,"[""descricao_produto"", ""grupo"", ""subgrupo""]",False,True,2
+SistemaFicticio15__vendas__Marca comercial,SistemaFicticio15,vendas,Marca comercial,laboratorio,mes,0.118808,"[""mes"", ""grupo"", ""lucro_bruto""]",False,False,2
+SistemaFicticio15__vendas__Volume em saldo,SistemaFicticio15,vendas,Volume em saldo,quantidade,quantidade,0.12397,"[""quantidade"", ""giro_mensal"", ""descricao_produto""]",True,True,2
+SistemaFicticio15__vendas__Total bruto comercializado,SistemaFicticio15,vendas,Total bruto comercializado,valor_total_bruto,valor_total_bruto,0.184207,"[""valor_total_bruto"", ""lucro_bruto"", ""valor_total_liquido""]",True,True,2
+SistemaFicticio15__vendas__Valor líquido recebido,SistemaFicticio15,vendas,Valor líquido recebido,valor_total_liquido,valor_total_liquido,0.442645,"[""valor_total_liquido"", ""valor_total_bruto"", ""lucro_bruto""]",True,True,2
+SistemaFicticio15__vendas__Valor investido,SistemaFicticio15,vendas,Valor investido,valor_total_custo,valor_total_custo,0.165259,"[""valor_total_custo"", ""valor_total_bruto"", ""valor_total_liquido""]",True,True,2
+SistemaFicticio15__vendas__Lucro bruto,SistemaFicticio15,vendas,Lucro bruto,lucro_bruto,lucro_bruto,0.328682,"[""lucro_bruto"", ""valor_total_bruto"", ""grupo""]",True,True,2
+SistemaFicticio15__vendas__Percentual teto de abatimento,SistemaFicticio15,vendas,Percentual teto de abatimento,desconto_maximo,desconto_maximo,0.198229,"[""desconto_maximo"", ""desconto_padrao"", ""desconto_preferencial""]",True,True,2
+SistemaFicticio15__vendas__Percentual comum de desconto,SistemaFicticio15,vendas,Percentual comum de desconto,desconto_padrao,desconto_padrao,0.257185,"[""desconto_padrao"", ""desconto_maximo"", ""desconto_preferencial""]",True,True,2
+SistemaFicticio15__vendas__Abatimento para cliente preferencial,SistemaFicticio15,vendas,Abatimento para cliente preferencial,desconto_preferencial,desconto_preferencial,0.373897,"[""desconto_preferencial"", ""mes"", ""desconto_padrao""]",True,True,2
+SistemaFicticio15__vendas__Ponto de estoque,SistemaFicticio15,vendas,Ponto de estoque,unidade,unidade,0.154091,"[""unidade"", ""valor_total_custo"", ""grupo""]",True,True,2
+SistemaFicticio17__estoque__Item GTIN,SistemaFicticio17,estoque,Item GTIN,ean,ean,0.344966,"[""ean"", ""descricao_produto"", ""quantidade""]",True,True,1
+SistemaFicticio17__estoque__Produto/descrição,SistemaFicticio17,estoque,Produto/descrição,descricao_produto,descricao_produto,0.309011,"[""descricao_produto"", ""laboratorio"", ""quantidade""]",True,True,1
+SistemaFicticio17__estoque__Família,SistemaFicticio17,estoque,Família,grupo,grupo,0.219013,"[""grupo"", ""subgrupo"", ""quantidade""]",True,True,1
+SistemaFicticio17__estoque__Segmento de catálogo,SistemaFicticio17,estoque,Segmento de catálogo,subgrupo,subgrupo,0.141123,"[""subgrupo"", ""descricao_produto"", ""grupo""]",True,True,1
+SistemaFicticio17__estoque__Indústria responsável,SistemaFicticio17,estoque,Indústria responsável,laboratorio,laboratorio,0.20359,"[""laboratorio"", ""quantidade"", ""subgrupo""]",True,True,1
+SistemaFicticio17__estoque__Existência atual,SistemaFicticio17,estoque,Existência atual,quantidade,quantidade,0.182351,"[""quantidade"", ""mes"", ""ean""]",True,True,1
+SistemaFicticio17__estoque__Consumo médio mensal,SistemaFicticio17,estoque,Consumo médio mensal,giro_mensal,giro_mensal,0.286028,"[""giro_mensal"", ""custo_medio"", ""mes""]",True,True,1
+SistemaFicticio17__estoque__Valor custo estoque,SistemaFicticio17,estoque,Valor custo estoque,valor_total_custo,valor_total_custo,0.290215,"[""valor_total_custo"", ""custo_medio"", ""giro_mensal""]",True,True,1
+SistemaFicticio17__estoque__Média de custo unitário,SistemaFicticio17,estoque,Média de custo unitário,custo_medio,custo_medio,0.408495,"[""custo_medio"", ""valor_total_custo"", ""unidade""]",True,True,1
+SistemaFicticio17__estoque__Montante líquido,SistemaFicticio17,estoque,Montante líquido,valor_total_liquido,valor_total_liquido,0.303533,"[""valor_total_liquido"", ""valor_total_custo"", ""quantidade""]",True,True,1
+SistemaFicticio17__estoque__Loja de origem,SistemaFicticio17,estoque,Loja de origem,unidade,filial,0.131331,"[""filial"", ""unidade"", ""laboratorio""]",False,True,1
+SistemaFicticio17__vendas__Período comercial,SistemaFicticio17,vendas,Período comercial,mes,mes,0.192157,"[""mes"", ""grupo"", ""descricao_produto""]",True,True,1
+SistemaFicticio17__vendas__Referência numérica da filial,SistemaFicticio17,vendas,Referência numérica da filial,filial,mes,0.151275,"[""mes"", ""filial"", ""desconto_preferencial""]",False,True,1
+SistemaFicticio17__vendas__Identificador universal,SistemaFicticio17,vendas,Identificador universal,ean,filial,0.216845,"[""filial"", ""unidade"", ""subgrupo""]",False,False,1
+SistemaFicticio17__vendas__Nome do item,SistemaFicticio17,vendas,Nome do item,descricao_produto,descricao_produto,0.157897,"[""descricao_produto"", ""ean"", ""laboratorio""]",True,True,1
+SistemaFicticio17__vendas__Linha de catálogo,SistemaFicticio17,vendas,Linha de catálogo,grupo,descricao_produto,0.12218,"[""descricao_produto"", ""subgrupo"", ""filial""]",False,False,1
+SistemaFicticio17__vendas__Ramo do produto,SistemaFicticio17,vendas,Ramo do produto,subgrupo,laboratorio,0.13383,"[""laboratorio"", ""descricao_produto"", ""ean""]",False,False,1
+SistemaFicticio17__vendas__Empresa fabricante,SistemaFicticio17,vendas,Empresa fabricante,laboratorio,laboratorio,0.266498,"[""laboratorio"", ""descricao_produto"", ""subgrupo""]",True,True,1
+SistemaFicticio17__vendas__Unidades armazenadas,SistemaFicticio17,vendas,Unidades armazenadas,quantidade,unidade,0.150029,"[""unidade"", ""quantidade"", ""filial""]",False,True,1
+SistemaFicticio17__vendas__Montante bruto,SistemaFicticio17,vendas,Montante bruto,valor_total_bruto,lucro_bruto,0.186553,"[""lucro_bruto"", ""valor_total_bruto"", ""valor_total_custo""]",False,True,1
+SistemaFicticio17__vendas__Total líquido dos itens,SistemaFicticio17,vendas,Total líquido dos itens,valor_total_liquido,valor_total_liquido,0.404324,"[""valor_total_liquido"", ""valor_total_bruto"", ""valor_total_custo""]",True,True,1
+SistemaFicticio17__vendas__Montante de custo total,SistemaFicticio17,vendas,Montante de custo total,valor_total_custo,valor_total_custo,0.411158,"[""valor_total_custo"", ""valor_total_bruto"", ""valor_total_liquido""]",True,True,1
+SistemaFicticio17__vendas__Resultado bruto comercial,SistemaFicticio17,vendas,Resultado bruto comercial,lucro_bruto,lucro_bruto,0.260753,"[""lucro_bruto"", ""valor_total_bruto"", ""descricao_produto""]",True,True,1
+SistemaFicticio17__vendas__Teto percentual de redução,SistemaFicticio17,vendas,Teto percentual de redução,desconto_maximo,desconto_maximo,0.178912,"[""desconto_maximo"", ""desconto_padrao"", ""desconto_preferencial""]",True,True,1
+SistemaFicticio17__vendas__Desconto padrão,SistemaFicticio17,vendas,Desconto padrão,desconto_padrao,desconto_padrao,0.350241,"[""desconto_padrao"", ""desconto_preferencial"", ""valor_total_bruto""]",True,True,1
+SistemaFicticio17__vendas__Abatimento de cliente especial,SistemaFicticio17,vendas,Abatimento de cliente especial,desconto_preferencial,desconto_preferencial,0.204209,"[""desconto_preferencial"", ""desconto_padrao"", ""desconto_maximo""]",True,True,1
+SistemaFicticio17__vendas__Local de operação,SistemaFicticio17,vendas,Local de operação,unidade,unidade,0.175326,"[""unidade"", ""mes"", ""lucro_bruto""]",True,True,1
+SistemaFicticio18__vendas__Competência,SistemaFicticio18,vendas,Competência,mes,mes,0.316362,"[""mes"", ""ean"", ""subgrupo""]",True,True,3
+SistemaFicticio18__vendas__Código da loja de origem,SistemaFicticio18,vendas,Código da loja de origem,filial,unidade,0.145387,"[""unidade"", ""filial"", ""ean""]",False,True,3
+SistemaFicticio18__vendas__Código global,SistemaFicticio18,vendas,Código global,ean,ean,0.142919,"[""ean"", ""filial"", ""unidade""]",True,True,3
+SistemaFicticio18__vendas__Medicamento,SistemaFicticio18,vendas,Medicamento,descricao_produto,descricao_produto,0.087103,"[""descricao_produto"", ""mes"", ""filial""]",True,True,3
+SistemaFicticio18__vendas__Segmento,SistemaFicticio18,vendas,Segmento,grupo,subgrupo,0.124787,"[""subgrupo"", ""grupo"", ""mes""]",False,True,3
+SistemaFicticio18__vendas__Categoria filha,SistemaFicticio18,vendas,Categoria filha,subgrupo,subgrupo,0.195935,"[""subgrupo"", ""grupo"", ""filial""]",True,True,3
+SistemaFicticio18__vendas__Nome do fabricante,SistemaFicticio18,vendas,Nome do fabricante,laboratorio,laboratorio,0.335898,"[""laboratorio"", ""descricao_produto"", ""filial""]",True,True,3
+SistemaFicticio18__vendas__Itens em estoque,SistemaFicticio18,vendas,Itens em estoque,quantidade,quantidade,0.120482,"[""quantidade"", ""ean"", ""valor_total_custo""]",True,True,3
+SistemaFicticio18__vendas__Valor de tabela vendido,SistemaFicticio18,vendas,Valor de tabela vendido,valor_total_bruto,valor_total_liquido,0.13391,"[""valor_total_liquido"", ""valor_total_bruto"", ""filial""]",False,True,3
+SistemaFicticio18__vendas__Total líquido comercializado,SistemaFicticio18,vendas,Total líquido comercializado,valor_total_liquido,valor_total_liquido,0.314218,"[""valor_total_liquido"", ""valor_total_bruto"", ""valor_total_custo""]",True,True,3
+SistemaFicticio18__vendas__Custo total dos produtos,SistemaFicticio18,vendas,Custo total dos produtos,valor_total_custo,valor_total_custo,0.179477,"[""valor_total_custo"", ""valor_total_bruto"", ""valor_total_liquido""]",True,True,3
+SistemaFicticio18__vendas__Retorno bruto da venda,SistemaFicticio18,vendas,Retorno bruto da venda,lucro_bruto,lucro_bruto,0.177208,"[""lucro_bruto"", ""valor_total_bruto"", ""mes""]",True,True,3
+SistemaFicticio18__vendas__Limite máximo promocional,SistemaFicticio18,vendas,Limite máximo promocional,desconto_maximo,desconto_maximo,0.394711,"[""desconto_maximo"", ""unidade"", ""laboratorio""]",True,True,3
+SistemaFicticio18__vendas__Desconto comercial base,SistemaFicticio18,vendas,Desconto comercial base,desconto_padrao,desconto_padrao,0.182561,"[""desconto_padrao"", ""desconto_preferencial"", ""valor_total_bruto""]",True,True,3
+SistemaFicticio18__vendas__Desconto preferencial,SistemaFicticio18,vendas,Desconto preferencial,desconto_preferencial,desconto_preferencial,0.277165,"[""desconto_preferencial"", ""desconto_padrao"", ""mes""]",True,True,3
+SistemaFicticio18__vendas__Estabelecimento,SistemaFicticio18,vendas,Estabelecimento,unidade,filial,0.119514,"[""filial"", ""unidade"", ""subgrupo""]",False,True,3
+SistemaFicticio19__estoque__Número de barras,SistemaFicticio19,estoque,Número de barras,ean,ean,0.132025,"[""ean"", ""quantidade"", ""unidade""]",True,True,5
+SistemaFicticio19__estoque__Descrição do item,SistemaFicticio19,estoque,Descrição do item,descricao_produto,descricao_produto,0.269358,"[""descricao_produto"", ""laboratorio"", ""quantidade""]",True,True,5
+SistemaFicticio19__estoque__Categoria,SistemaFicticio19,estoque,Categoria,grupo,subgrupo,0.223141,"[""subgrupo"", ""grupo"", ""quantidade""]",False,True,5
+SistemaFicticio19__estoque__Segmento específico,SistemaFicticio19,estoque,Segmento específico,subgrupo,subgrupo,0.170604,"[""subgrupo"", ""grupo"", ""quantidade""]",True,True,5
+SistemaFicticio19__estoque__Indústria fabricante,SistemaFicticio19,estoque,Indústria fabricante,laboratorio,laboratorio,0.384398,"[""laboratorio"", ""subgrupo"", ""valor_total_custo""]",True,True,5
+SistemaFicticio19__estoque__Unidades disponíveis,SistemaFicticio19,estoque,Unidades disponíveis,quantidade,quantidade,0.199379,"[""quantidade"", ""unidade"", ""giro_mensal""]",True,True,5
+SistemaFicticio19__estoque__Volume mensal movimentado,SistemaFicticio19,estoque,Volume mensal movimentado,giro_mensal,giro_mensal,0.278018,"[""giro_mensal"", ""quantidade"", ""subgrupo""]",True,True,5
+SistemaFicticio19__estoque__Investimento total,SistemaFicticio19,estoque,Investimento total,valor_total_custo,valor_total_custo,0.180222,"[""valor_total_custo"", ""valor_total_liquido"", ""giro_mensal""]",True,True,5
+SistemaFicticio19__estoque__Média ponderada de custo,SistemaFicticio19,estoque,Média ponderada de custo,custo_medio,custo_medio,0.293309,"[""custo_medio"", ""valor_total_custo"", ""giro_mensal""]",True,True,5
+SistemaFicticio19__estoque__Total comercial líquido,SistemaFicticio19,estoque,Total comercial líquido,valor_total_liquido,valor_total_liquido,0.361919,"[""valor_total_liquido"", ""valor_total_custo"", ""grupo""]",True,True,5
+SistemaFicticio19__estoque__Loja,SistemaFicticio19,estoque,Loja,unidade,unidade,0.205066,"[""unidade"", ""filial"", ""quantidade""]",True,True,5
+SistemaFicticio20__vendas__Mês referência,SistemaFicticio20,vendas,Mês referência,mes,mes,0.268297,"[""mes"", ""ean"", ""desconto_preferencial""]",True,True,2
+SistemaFicticio20__vendas__ID do estabelecimento vendedor,SistemaFicticio20,vendas,ID do estabelecimento vendedor,filial,unidade,0.085935,"[""unidade"", ""valor_total_bruto"", ""laboratorio""]",False,False,2
+SistemaFicticio20__vendas__Barcode,SistemaFicticio20,vendas,Barcode,ean,ean,0.088589,"[""ean"", ""mes"", ""valor_total_bruto""]",True,True,2
+SistemaFicticio20__vendas__Produto cadastrado,SistemaFicticio20,vendas,Produto cadastrado,descricao_produto,laboratorio,0.141376,"[""laboratorio"", ""ean"", ""unidade""]",False,False,2
+SistemaFicticio20__vendas__Agrupador,SistemaFicticio20,vendas,Agrupador,grupo,grupo,0.073958,"[""grupo"", ""valor_total_bruto"", ""lucro_bruto""]",True,True,2
+SistemaFicticio20__vendas__Linha específica,SistemaFicticio20,vendas,Linha específica,subgrupo,subgrupo,0.157545,"[""subgrupo"", ""grupo"", ""desconto_preferencial""]",True,True,2
+SistemaFicticio20__vendas__Origem laboratorial,SistemaFicticio20,vendas,Origem laboratorial,laboratorio,filial,0.079451,"[""filial"", ""laboratorio"", ""grupo""]",False,True,2
+SistemaFicticio20__vendas__Estoque atual,SistemaFicticio20,vendas,Estoque atual,quantidade,quantidade,0.100814,"[""quantidade"", ""unidade"", ""grupo""]",True,True,2
+SistemaFicticio20__vendas__Valor sem desconto,SistemaFicticio20,vendas,Valor sem desconto,valor_total_bruto,valor_total_bruto,0.139697,"[""valor_total_bruto"", ""desconto_padrao"", ""desconto_preferencial""]",True,True,2
+SistemaFicticio20__vendas__Total recebido,SistemaFicticio20,vendas,Total recebido,valor_total_liquido,valor_total_liquido,0.140835,"[""valor_total_liquido"", ""valor_total_bruto"", ""valor_total_custo""]",True,True,2
+SistemaFicticio20__vendas__Custo consolidado,SistemaFicticio20,vendas,Custo consolidado,valor_total_custo,valor_total_custo,0.178744,"[""valor_total_custo"", ""custo_medio"", ""desconto_preferencial""]",True,True,2
+SistemaFicticio20__vendas__Lucro comercial bruto,SistemaFicticio20,vendas,Lucro comercial bruto,lucro_bruto,lucro_bruto,0.275555,"[""lucro_bruto"", ""valor_total_bruto"", ""grupo""]",True,True,2
+SistemaFicticio20__vendas__Desconto máximo cadastrado,SistemaFicticio20,vendas,Desconto máximo cadastrado,desconto_maximo,desconto_maximo,0.271224,"[""desconto_maximo"", ""desconto_preferencial"", ""desconto_padrao""]",True,True,2
+SistemaFicticio20__vendas__Desconto corrente,SistemaFicticio20,vendas,Desconto corrente,desconto_padrao,desconto_preferencial,0.227248,"[""desconto_preferencial"", ""desconto_padrao"", ""desconto_maximo""]",False,True,2
+SistemaFicticio20__vendas__Benefício percentual preferencial,SistemaFicticio20,vendas,Benefício percentual preferencial,desconto_preferencial,desconto_preferencial,0.264146,"[""desconto_preferencial"", ""mes"", ""desconto_maximo""]",True,True,2
+SistemaFicticio20__vendas__Unidade emissora,SistemaFicticio20,vendas,Unidade emissora,unidade,filial,0.130778,"[""filial"", ""unidade"", ""quantidade""]",False,True,2
