@@ -1,5 +1,7 @@
 # Data Intelligence Engine
 
+![Capa do Data Intelligence Engine: tratamento revisável de estoque e vendas](assets/data-intelligence-cover.svg)
+
 > Ferramenta em Python para inspecionar arquivos tabulares, entender sua qualidade e preparar uma representação consistente dos dados.
 
 > **Status:** MVP aplicado, em piloto local. A ferramenta já é usada no trabalho para preparar relatórios tabulares, com revisão dos mapeamentos e exportação para modelos Excel. O repositório público contém apenas exemplos sintéticos; arquivos, cadastros e dados empresariais ficam fora dele. O classificador experimental agora participa do app como recomendador revisável de cabeçalhos; ele não escolhe regras comerciais nem trata fontes de forma autônoma.

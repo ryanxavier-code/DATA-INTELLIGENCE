@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1020"/>
+      <stop offset="1" stop-color="#101D36"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#53E3C2"/>
+      <stop offset="1" stop-color="#6AA6FF"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#172641"/>
+      <stop offset="1" stop-color="#101B30"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" stroke="#8CA4C8" stroke-opacity=".075"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="420" rx="24" fill="url(#bg)"/>
+  <rect width="1280" height="420" rx="24" fill="url(#grid)"/>
+  <circle cx="1130" cy="20" r="170" fill="#315CC8" fill-opacity=".26" filter="url(#glow)"/>
+  <circle cx="790" cy="410" r="150" fill="#18BFA2" fill-opacity=".12" filter="url(#glow)"/>
+
+  <!-- Brand mark -->
+  <g transform="translate(66 58)">
+    <rect width="52" height="52" rx="15" fill="#152844" stroke="#476287"/>
+    <path d="M14 17H25L38 35H27L14 17Z" fill="url(#accent)"/>
+    <path d="M38 17H27L14 35H25L38 17Z" fill="#7BA9FF" fill-opacity=".9"/>
+    <circle cx="14" cy="17" r="3" fill="#D9F8F2"/>
+    <circle cx="38" cy="17" r="3" fill="#D9F8F2"/>
+    <circle cx="14" cy="35" r="3" fill="#D9F8F2"/>
+    <circle cx="38" cy="35" r="3" fill="#D9F8F2"/>
+  </g>
+  <text x="134" y="79" fill="#A9B9D2" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="3.5">DATA ENGINEERING · ML LEARNING PROJECT</text>
+
+  <text x="66" y="165" fill="#F3F7FF" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="750" letter-spacing="1.5">DATA INTELLIGENCE</text>
+  <text x="68" y="205" fill="#B7C6DD" font-family="Segoe UI, Arial, sans-serif" font-size="20">Tratamento rastreável de estoque e vendas</text>
+
+  <g transform="translate(66 245)" font-family="Segoe UI, Arial, sans-serif">
+    <rect width="166" height="34" rx="17" fill="#182A43" stroke="#38506D"/>
+    <circle cx="17" cy="17" r="4" fill="#53E3C2"/>
+    <text x="30" y="22" fill="#D7E3F5" font-size="13" font-weight="600">Identifica unidades</text>
+    <rect x="178" width="173" height="34" rx="17" fill="#182A43" stroke="#38506D"/>
+    <circle cx="195" cy="17" r="4" fill="#6AA6FF"/>
+    <text x="208" y="22" fill="#D7E3F5" font-size="13" font-weight="600">Mapeia colunas</text>
+    <rect x="363" width="183" height="34" rx="17" fill="#182A43" stroke="#38506D"/>
+    <circle cx="380" cy="17" r="4" fill="#53E3C2"/>
+    <text x="393" y="22" fill="#D7E3F5" font-size="13" font-weight="600">Gera saída padrão</text>
+  </g>
+
+  <text x="68" y="351" fill="#7186A5" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="2">PYTHON  ·  PANDAS  ·  STREAMLIT  ·  SCIKIT-LEARN</text>
+
+  <!-- Data flow diagram -->
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <!-- source table -->
+    <rect x="666" y="113" width="154" height="198" rx="16" fill="url(#card)" stroke="#344B6C"/>
+    <rect x="683" y="131" width="28" height="32" rx="6" fill="#204B55"/>
+    <path d="M690 138H704M690 145H704M690 152H704M697 136V158" stroke="#6DE2C4" stroke-width="1.4"/>
+    <text x="720" y="145" fill="#E5EEFB" font-size="14" font-weight="700">ARQUIVOS</text>
+    <text x="683" y="185" fill="#8399B8" font-size="11" font-weight="700" letter-spacing="1.3">ORIGENS DIFERENTES</text>
+    <g font-size="12" fill="#C6D3E6">
+      <rect x="683" y="199" width="120" height="27" rx="6" fill="#1D304B"/>
+      <text x="695" y="217">Relatório de estoque</text>
+      <rect x="683" y="233" width="120" height="27" rx="6" fill="#1D304B"/>
+      <text x="695" y="251">Relatório de vendas</text>
+      <rect x="683" y="267" width="120" height="27" rx="6" fill="#1D304B"/>
+      <text x="695" y="285">Campos variados</text>
+    </g>
+
+    <!-- transition -->
+    <path d="M827 212H858" stroke="url(#accent)" stroke-width="2.5"/>
+    <path d="M853 206L860 212L853 218" stroke="#65DCC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- mapping -->
+    <rect x="867" y="89" width="188" height="246" rx="16" fill="url(#card)" stroke="#3E5A7D"/>
+    <text x="886" y="119" fill="#E5EEFB" font-size="14" font-weight="700">MAPEAMENTO</text>
+    <text x="886" y="140" fill="#8198B8" font-size="11">Sugere · revisa · valida</text>
+    <g font-size="11.5" font-family="Consolas, monospace">
+      <rect x="884" y="158" width="154" height="33" rx="7" fill="#1C304B"/>
+      <text x="896" y="179" fill="#86A8D9">GTIN</text><text x="947" y="179" fill="#61D9BD">→ EAN</text>
+      <rect x="884" y="199" width="154" height="33" rx="7" fill="#1C304B"/>
+      <text x="896" y="220" fill="#86A8D9">Produto</text><text x="947" y="220" fill="#61D9BD">→ Descrição</text>
+      <rect x="884" y="240" width="154" height="33" rx="7" fill="#1C304B"/>
+      <text x="896" y="261" fill="#86A8D9">Saldo</text><text x="947" y="261" fill="#61D9BD">→ Quantidade</text>
+    </g>
+    <circle cx="893" cy="301" r="5" fill="#53E3C2"/>
+    <text x="906" y="305" fill="#B7C6DD" font-size="11.5">Regras executadas pela automação</text>
+
+    <!-- transition -->
+    <path d="M1062 212H1091" stroke="url(#accent)" stroke-width="2.5"/>
+    <path d="M1086 206L1093 212L1086 218" stroke="#65DCC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- output -->
+    <rect x="1101" y="125" width="128" height="174" rx="16" fill="#142943" stroke="#38627A"/>
+    <circle cx="1165" cy="163" r="22" fill="#174C4A"/>
+    <path d="M1154 163L1162 171L1177 155" stroke="#65E0C1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1122" y="207" fill="#EAF3FF" font-size="13" font-weight="700">SAÍDA</text>
+    <text x="1122" y="230" fill="#AFC0D7" font-size="11.5">Modelo Excel</text>
+    <text x="1122" y="248" fill="#AFC0D7" font-size="11.5">padronizado</text>
+    <rect x="1122" y="265" width="85" height="5" rx="2.5" fill="url(#accent)"/>
+  </g>
+
+  <path d="M64 385H1216" stroke="#7890B4" stroke-opacity=".18"/>
+  <text x="66" y="405" fill="#647B9C" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" letter-spacing="1.5">REVISÃO HUMANA NOS MAPEAMENTOS · DADOS EMPRESARIAIS FICAM LOCAIS</text>
+</svg>
